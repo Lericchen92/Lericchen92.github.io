@@ -1,0 +1,1063 @@
+<!DOCTYPE html>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+<html class="theme-next muse use-motion" lang="zh-CN">
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+
+
+
+  
+  
+  <link rel="stylesheet" href="/lib/needsharebutton/needsharebutton.css">
+
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=6.4.1" rel="stylesheet" type="text/css">
+
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.ico?v=6.4.1">
+
+
+
+
+
+
+
+
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    version: '6.4.1',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: false,
+    fastclick: false,
+    lazyload: false,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+  
+
+
+
+
+  <meta name="description" content="以下的内容为了学习，为了复习，也为了更好地工作！     这一部分会简单地介绍一些机器学习的概念、定义、需要接受的内容和调整策略，包括数据集划分、模型诊断、性能评估标准等内容。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="机器学习复习计划0 - 概念与技巧">
+<meta property="og:url" content="http://whatsmore.info/2019/03/21/机器学习复习计划0-概念与技巧/index.html">
+<meta property="og:site_name" content="除此之外">
+<meta property="og:description" content="以下的内容为了学习，为了复习，也为了更好地工作！     这一部分会简单地介绍一些机器学习的概念、定义、需要接受的内容和调整策略，包括数据集划分、模型诊断、性能评估标准等内容。">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="http://whatsmore.info/2019/03/21/机器学习复习计划0-概念与技巧/1-1.jpg">
+<meta property="og:image" content="http://whatsmore.info/2019/03/21/机器学习复习计划0-概念与技巧/1-2.jpg">
+<meta property="og:image" content="http://whatsmore.info/2019/03/21/机器学习复习计划0-概念与技巧/1-3.jpg">
+<meta property="og:image" content="http://whatsmore.info/2019/03/21/机器学习复习计划0-概念与技巧/1-4.jpg">
+<meta property="og:image" content="http://whatsmore.info/2019/03/21/机器学习复习计划0-概念与技巧/1-5.jpg">
+<meta property="og:image" content="http://whatsmore.info/2019/03/21/机器学习复习计划0-概念与技巧/1-6.jpg">
+<meta property="og:image" content="http://whatsmore.info/2019/03/21/机器学习复习计划0-概念与技巧/1-7.jpg">
+<meta property="og:updated_time" content="2019-03-22T03:35:45.511Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="机器学习复习计划0 - 概念与技巧">
+<meta name="twitter:description" content="以下的内容为了学习，为了复习，也为了更好地工作！     这一部分会简单地介绍一些机器学习的概念、定义、需要接受的内容和调整策略，包括数据集划分、模型诊断、性能评估标准等内容。">
+<meta name="twitter:image" content="http://whatsmore.info/2019/03/21/机器学习复习计划0-概念与技巧/1-1.jpg">
+
+
+
+
+
+
+  <link rel="canonical" href="http://whatsmore.info/2019/03/21/机器学习复习计划0-概念与技巧/">
+
+
+
+<script type="text/javascript" id="page.configurations">
+  CONFIG.page = {
+    sidebar: "",
+  };
+</script>
+
+  <title>机器学习复习计划0 - 概念与技巧 | 除此之外</title>
+  
+
+
+
+
+
+
+
+
+
+  <noscript>
+  <style type="text/css">
+    .use-motion .motion-element,
+    .use-motion .brand,
+    .use-motion .menu-item,
+    .sidebar-inner,
+    .use-motion .post-block,
+    .use-motion .pagination,
+    .use-motion .comments,
+    .use-motion .post-header,
+    .use-motion .post-body,
+    .use-motion .collection-title { opacity: initial; }
+
+    .use-motion .logo,
+    .use-motion .site-title,
+    .use-motion .site-subtitle {
+      opacity: initial;
+      top: initial;
+    }
+
+    .use-motion {
+      .logo-line-before i { left: initial; }
+      .logo-line-after i { right: initial; }
+    }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope="" itemtype="http://schema.org/WebPage" lang="zh-CN">
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <header id="header" class="header" itemscope="" itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">除此之外</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+    
+      
+        <p class="site-subtitle">Whatsmore?</p>
+      
+    
+  </div>
+
+  <div class="site-nav-toggle">
+    <button aria-label="切换导航栏">
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  
+    <ul id="menu" class="menu">
+      
+        
+        
+        
+          
+          <li class="menu-item menu-item-home">
+    <a href="/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-home"></i> <br>首页</a>
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-about">
+    <a href="/about/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-user"></i> <br>关于</a>
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-tags">
+    <a href="/tags/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>标签</a>
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-categories">
+    <a href="/categories/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-th"></i> <br>分类</a>
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-archives">
+    <a href="/archives/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>归档</a>
+  </li>
+
+      
+      
+    </ul>
+  
+
+  
+    
+
+  
+
+  
+</nav>
+
+
+
+  
+
+
+
+</div>
+    </header>
+
+    
+
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://whatsmore.info/2019/03/21/机器学习复习计划0-概念与技巧/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Shadowlight">
+      <meta itemprop="description" content="划水运动员，摸鱼爱好者的乐园。">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="除此之外">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">机器学习复习计划0 - 概念与技巧
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2019-03-21 20:24:26" itemprop="dateCreated datePublished" datetime="2019-03-21T20:24:26+08:00">2019-03-21</time>
+            
+
+            
+              
+
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2019-03-22 11:35:45" itemprop="dateModified" datetime="2019-03-22T11:35:45+08:00">2019-03-22</time>
+              
+            
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2019/03/21/机器学习复习计划0-概念与技巧/#comments" itemprop="discussionUrl">
+                  <span class="post-meta-item-text">评论数：</span> <span class="post-comments-count valine-comment-count" data-xid="/2019/03/21/机器学习复习计划0-概念与技巧/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+             <span id="/2019/03/21/机器学习复习计划0-概念与技巧/" class="leancloud_visitors" data-flag-title="机器学习复习计划0 - 概念与技巧">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数：</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p><strong><center>以下的内容为了学习，为了复习，也为了更好地工作！</center></strong>  </p>
+<p>  这一部分会简单地介绍一些机器学习的概念、定义、需要接受的内容和调整策略，包括数据集划分、模型诊断、性能评估标准等内容。</p>
+<a id="more"></a>
+<hr>
+<p>复习计划是写博客并且同步代码，整体分为4个部分：基础数学，传统机器学习，深度学习和混合项目。首先准备传统机器学习部分，因为这个……和目前的工作最相关了！<br>在这个博客里参考了各种类型的书和网站，目前用到的有：《统计学习方法》、《机器学习》、《Scikit-learn与Tensorflow机器学习实用指南》、《深度学习》、吴恩达老师的教程、斯坦福大学的教程等等，向以上各位老师致敬！<br>下面进入正题！</p>
+<hr>
+<h4 id="写在最前面的"><a href="#写在最前面的" class="headerlink" title="写在最前面的"></a>写在最前面的</h4><p>无论是想要尝试机器学习系统，还是深度学习系统，吴恩达老师的策略都是很有帮助的：<br>1、首先尝试一些关于系统构建的想法(idea)；<br>2、接下来使用代码(code)实现想法；<br>3、最后根据实验（experiment）结果判断想法是否行得通。（第一个想到的点子一般都行不通！）在此基础上学习总结，从而产生新的想法，并保持这一迭代过程。  </p>
+<p><img src="/2019/03/21/机器学习复习计划0-概念与技巧/1-1.jpg" alt="图片1-1"></p>
+<h4 id="机器学习概念与技巧"><a href="#机器学习概念与技巧" class="headerlink" title="机器学习概念与技巧"></a>机器学习概念与技巧</h4><h5 id="什么是机器学习"><a href="#什么是机器学习" class="headerlink" title="什么是机器学习"></a>什么是机器学习</h5><p>对于某类<strong>任务T</strong>和<strong>性能度量P</strong>，一个计算机程序被认为可以从<strong>经验E</strong>中学习是指，通过经验E改进过后，它在任务T上由性能度量P衡量的性能有所提升。<br><strong>任务T</strong>：通常机器学习任务定义为机器学习系统如何处理样本(example)，样本是指从某些希望机器学习系统处理的对象或事件中收集到的已经量化的特征(feature)集合。<br>常见任务例子：<br>1、分类：指定某些输入属于k类中的哪一类；<br>2、回归：对给定输入预测数值；<br>3、异常检测：在一组对象中筛选，标记不正常个体。<br><strong>性能度量P</strong>：对于分类等任务，一般使用准确率(accuracy)作为性能度量，使用测试集(test set)评估系统性能。<br><strong>经验E</strong>：依据学习过程中的不同经验，可大致分为有监督(supervised)和无监督(unsupervised)算法。有监督学习算法的样本含有标签(label)或者目标(target)，无监督学习算法主要学习数据集中有用的结构性质。  </p>
+<h5 id="数据集划分"><a href="#数据集划分" class="headerlink" title="数据集划分"></a>数据集划分</h5><p>一般来说，数据集（样本）会分为三部分：<strong>训练集(training set)</strong>、<strong>开发集(development set)</strong>和<strong>测试集(test set)</strong>：  </p>
+<p><img src="/2019/03/21/机器学习复习计划0-概念与技巧/1-2.jpg" alt="图片1-2"></p>
+<p>训练集：用于运行学习算法。<br>开发集：用于调整参数或者超参数(hyperparameter)，选择特征，以及对学习算法做出其它决定。有时也称为留出交叉验证集(hold-out cross validation set)。<br>测试集：用于评估算法的性能，但不会据此改变学习算法或参数。<br>换言之，开发集和测试集的使命就是帮助并引导你的团队对机器学习系统做出最重要的改变。所以应合理地选择开发集和测试集，使之能够代表将来实际数据的情况，并期望算法能够运行良好。  </p>
+<hr>
+<blockquote>
+<blockquote>
+<p><strong><em>数据集划分的Tips(from Machine Learning Yearning)：</em></strong><br>1、被选择作为开发集和测试集的数据，应与你未来计划获取并对其进行良好处理的数据有着相同的分布，而不一定和训练集的数据分布一致。<br>2、为你的团队选择一个单值评估指标(single-number evaluation metric)进行优化。当需要考虑多项目标时，不妨将它们整合到一个表达式里（如对多个误差指标取平均值），或者设定满意度指标和优化指标。机器学习是一个高度迭代的过程，在出现最终令人满意的方案之前，你可能要尝试很多想法。拥有开发集、测试集和单值评估指标可以帮助你快速评估一个算法，从而加速迭代进程。<br>3、当你要探索一个全新的应用时，提出一个不太完美的方案并迅速执行，比起花过多的时间去思考要好很多，应尽可能在一周内建立你的开发集、测试集和评估指标；而在已经相对成熟的应用上，可以考虑花费更长的时间来执行这些工作。<br>4、传统的70% / 30%训练集/测试集划分对于大规模数据并不适用，实际上，开发集和测试集的比例会远低于30%。开发集的规模应当大到能够检测出算法精度的细微改变，但也不需要太大；测试集的规模应该大到能够使你能对系统的最终性做出一个充分的估计。<br>5、当开发集和评估指标对于团队已经不能提供一个正确的导向时，尽快修改它们：<br>(1)若算法在开发集上过拟合，需要获取更多的开发集数据；<br>(2)若开发集与测试集的数据分布和实际数据分布不同，需要获取新的开发集和测试集；<br>(3)若评估指标无法对最重要的任务目标进行度量，需要修改评估指标。 </p>
+</blockquote>
+</blockquote>
+<hr>
+<h5 id="算法误差分析"><a href="#算法误差分析" class="headerlink" title="算法误差分析"></a>算法误差分析</h5><p>通常情况下，好的机器学习算法需要在之前未有的新输入上表现良好，这种能力被称为<strong>泛化(generalization)</strong>。<br>    一个好的机器学习算法需要满足：<br>(1) 有较低的训练误差，即算法在训练集上面获得较低误差；<br>(2) 训练误差和泛化误差（测试误差）的差距较小。  </p>
+<hr>
+<blockquote>
+<blockquote>
+<p><strong><em>误差分析的Tips：</em></strong><br>1、当你开始一个新项目，尤其是在一个你不擅长的领域开展项目时，很难正确预判出最有前景的方向。所以，不要在一开始就试图设计和构建一个完美的系统，相反，应尽可能快（例如在短短几天内）地构建和训练一个系统雏形。然后使用误差分析法去帮助你识别出最有前景的方向，并据此不断迭代改进你的算法。<br>2、通过手动检查约100个被算法错误分类的开发集样本来执行误差分析，并计算主要的错误类别。使用这些信息来确定优先修正哪种类型的错误。<br>3、考虑将开发集分为人为检查的Eyeball开发集和非人为检查的Blackbox开发集。如果在Eyeball开发集上的性能比在Blackbox开发集上好很多，说明你已过拟合Eyeball开发集，下一步应该考虑为其获取更多数据。Eyeball开发集应该足够大，以便于算法有足够多的错误分类样本供你分析。对大多数应用来说，含有1000-10000个样本的Blackbox开发集已足够。如果你的开发集不够大，无法按照这种方式进行拆分，那么就使用Eyeball开发集来执行人工误差分析、模型选择和调超参。<br>4、奥卡姆剃刀原则指出，在机器学习领域中，简单的函数更可能泛化。<br>5、没有免费午餐定理：在机器学习领域，目标不是找一个通用学习算法，而应该理解什么样的学习算法在所需数据生成分布上效果最好。 </p>
+</blockquote>
+</blockquote>
+<hr>
+<h5 id="常见符号和一般定义"><a href="#常见符号和一般定义" class="headerlink" title="常见符号和一般定义"></a>常见符号和一般定义</h5><p><strong>预设</strong>：模型用$h_θ$表示，对于给定输入数据$x^{(i)}$，模型预测输出是$h_θ (x^{(i)})$。<br><strong>损失函数(loss function)</strong>定义为$L(z,y)∈R$的函数，真实数据值y和模型预测值$z=h_θ (x)$作为输入，输出y和z的差别。常见的损失函数总结如下表：   </p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">损失函数名</th>
+<th style="text-align:center">最小二乘误差</th>
+<th style="text-align:center">Logistic损失</th>
+<th style="text-align:center">合页损失</th>
+<th style="text-align:center">交叉熵</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">对应公式</td>
+<td style="text-align:center">$\frac{1}{2}(y-z)^2 $</td>
+<td style="text-align:center">$log(1+e^{(-yz)})$</td>
+<td style="text-align:center">$max(0,1-yz)$</td>
+<td style="text-align:center">$-[y-ylog(z)+(1-y)log(1-z)]$</td>
+</tr>
+<tr>
+<td style="text-align:center">对应图示</td>
+<td style="text-align:center"><img src="/2019/03/21/机器学习复习计划0-概念与技巧/1-3.jpg" alt="图片1-3"></td>
+<td style="text-align:center"><img src="/2019/03/21/机器学习复习计划0-概念与技巧/1-4.jpg" alt="图片1-4"></td>
+<td style="text-align:center"><img src="/2019/03/21/机器学习复习计划0-概念与技巧/1-5.jpg" alt="图片1-5"></td>
+<td style="text-align:center"><img src="/2019/03/21/机器学习复习计划0-概念与技巧/1-6.jpg" alt="图片1-6"></td>
+</tr>
+<tr>
+<td style="text-align:center">应用场景</td>
+<td style="text-align:center">线性回归</td>
+<td style="text-align:center">Logistic回归</td>
+<td style="text-align:center">SVM</td>
+<td style="text-align:center">神经网络</td>
+</tr>
+</tbody>
+</table>
+<p><strong>成本函数(cost function)</strong>J(θ)通常用于评估模型的性能，函数定义为：<br>$J(θ)={\sum_{i=1}^m}{L(h_θ{(x^{(i)}),y^{(i)})}}$ </p>
+<h5 id="模型性能评估标准"><a href="#模型性能评估标准" class="headerlink" title="模型性能评估标准"></a>模型性能评估标准</h5><h6 id="分类问题的度量"><a href="#分类问题的度量" class="headerlink" title="分类问题的度量"></a>分类问题的度量</h6><p>在<strong>二分类问题</strong>中，下面的度量标准对于评估分类模型的性能非常重要。<br>(1) <strong>混淆矩阵(Confusion Matrix)</strong> 可以用来评估模型的整体性能情况，其概念和定义如下： </p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">概念</th>
+<th style="text-align:center">定义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">True Positive (TP)</td>
+<td style="text-align:center">真实数据为0，预测数据为0</td>
+</tr>
+<tr>
+<td style="text-align:center">False Negative (FN)</td>
+<td style="text-align:center">真实数据为0，预测数据为1</td>
+</tr>
+<tr>
+<td style="text-align:center">False Positive (FP)</td>
+<td style="text-align:center">真实数据为1，预测数据为0</td>
+</tr>
+<tr>
+<td style="text-align:center">True Negative (TN)</td>
+<td style="text-align:center">真实数据为1，预测数据为1</td>
+</tr>
+</tbody>
+</table>
+<p><img src="/2019/03/21/机器学习复习计划0-概念与技巧/1-7.jpg" alt="图片1-7"> </p>
+<p>(2) 下表给出了评估分类模型性能的度量标准： </p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">定义</th>
+<th style="text-align:center">性能度量</th>
+<th style="text-align:center">说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">总体判断的准确率（Accuracy）</td>
+<td style="text-align:center">$\frac{TP+TN}{TP+TN+FP+FN}$</td>
+<td style="text-align:center">模型总体性能</td>
+</tr>
+<tr>
+<td style="text-align:center">精确率（Precision）</td>
+<td style="text-align:center">$\frac{TP}{TP+FP}$</td>
+<td style="text-align:center">预测为正样本的准确度</td>
+</tr>
+<tr>
+<td style="text-align:center">召回率/灵敏度(Recall, Sensitivity)</td>
+<td style="text-align:center">$\frac{TP}{TP+FN}$</td>
+<td style="text-align:center">真正(TP)样本的覆盖度</td>
+</tr>
+<tr>
+<td style="text-align:center">特异性(Specificity)</td>
+<td style="text-align:center">$\frac{TN}{TN+FP}$</td>
+<td style="text-align:center">真负(TN)样本的覆盖度</td>
+</tr>
+<tr>
+<td style="text-align:center">F1分数（F1 Score）</td>
+<td style="text-align:center">$\frac{2TP}{2TP+FP+FN}$</td>
+<td style="text-align:center">混合度量，对于不平衡类别非常有效</td>
+</tr>
+</tbody>
+</table>
+
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+      
+        <div class="post-widgets">
+        
+
+        
+
+        
+          
+          <div class="social_share">
+            
+            
+               <div id="needsharebutton-postbottom">
+                 <span class="btn">
+                    <i class="fa fa-share-alt" aria-hidden="true"></i>
+                 </span>
+               </div>
+            
+          </div>
+        
+        </div>
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/10/14/Hexo配置-文本编辑/" rel="next" title="Hexo配置&文本编辑">
+                <i class="fa fa-chevron-left"></i> Hexo配置&文本编辑
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+  </div>
+
+
+          </div>
+          
+
+  
+    <div class="comments" id="comments">
+    </div>
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image" src="/images/avatar.jpg" alt="Shadowlight">
+            
+              <p class="site-author-name" itemprop="name">Shadowlight</p>
+              <p class="site-description motion-element" itemprop="description">划水运动员，摸鱼爱好者的乐园。</p>
+          </div>
+
+          
+            <nav class="site-state motion-element">
+              
+                <div class="site-state-item site-state-posts">
+                
+                  <a href="/archives/">
+                
+                    <span class="site-state-item-count">3</span>
+                    <span class="site-state-item-name">日志</span>
+                  </a>
+                </div>
+              
+
+              
+
+              
+            </nav>
+          
+
+          
+
+          
+            <div class="links-of-author motion-element">
+              
+                <span class="links-of-author-item">
+                  <a href="https://github.com/shadowlightqywx" target="_blank" title="GitHub"><i class="fa fa-fw fa-github"></i>GitHub</a>
+                  
+                </span>
+              
+                <span class="links-of-author-item">
+                  <a href="mailto:shadowlight_qywx@qq.com" target="_blank" title="E-Mail"><i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                  
+                </span>
+              
+            </div>
+          
+
+          
+          
+
+          
+          
+
+          
+            
+          
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#写在最前面的"><span class="nav-number">1.</span> <span class="nav-text">写在最前面的</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#机器学习概念与技巧"><span class="nav-number">2.</span> <span class="nav-text">机器学习概念与技巧</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#什么是机器学习"><span class="nav-number">2.1.</span> <span class="nav-text">什么是机器学习</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#数据集划分"><span class="nav-number">2.2.</span> <span class="nav-text">数据集划分</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#算法误差分析"><span class="nav-number">2.3.</span> <span class="nav-text">算法误差分析</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#常见符号和一般定义"><span class="nav-number">2.4.</span> <span class="nav-text">常见符号和一般定义</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#模型性能评估标准"><span class="nav-number">2.5.</span> <span class="nav-text">模型性能评估标准</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#分类问题的度量"><span class="nav-number">2.5.1.</span> <span class="nav-text">分类问题的度量</span></a></li></ol></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">
+<div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>  &copy; 2018 – <span itemprop="copyrightYear">2019</span>
+  <span class="with-love" id="animate">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Shadowlight</span>
+
+  
+
+  
+</div>
+
+
+
+
+
+
+
+
+
+
+
+        
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+	
+    
+
+    
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=6.4.1"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=6.4.1"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=6.4.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=6.4.1"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=6.4.1"></script>
+
+
+
+  
+
+
+
+  
+
+
+
+
+
+
+
+
+  <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+  
+  
+  <script src="//unpkg.com/valine/dist/Valine.min.js"></script>
+  
+  <script type="text/javascript">
+    var GUEST = ['nick','mail','link'];
+    var guest = 'nick,mail,link';
+    guest = guest.split(',').filter(function (item) {
+      return GUEST.indexOf(item)>-1;
+    });
+    new Valine({
+        el: '#comments' ,
+        verify: false,
+        notify: false,
+        appId: 'fmBmjTAI27951oFefYnEFRB2-gzGzoHsz',
+        appKey: 'JcQtVzu5N6qlksGuR72cvSR1',
+        placeholder: '来呀！快活呀！',
+        avatar:'mm',
+        meta:guest,
+        pageSize:'10' || 10,
+        visitor: false
+    });
+  </script>
+
+
+
+  
+
+
+
+
+
+  
+
+  
+  <script>
+    
+    function addCount(Counter) {
+      var $visitors = $(".leancloud_visitors");
+      var url = $visitors.attr('id').trim();
+      var title = $visitors.attr('data-flag-title').trim();
+
+      Counter('get', '/classes/Counter', { where: JSON.stringify({ url }) })
+        .done(function ({ results }) {
+          if (results.length > 0) {
+            var counter = results[0];
+            
+            Counter('put', `/classes/Counter/${counter.objectId}`, JSON.stringify({ time: { "__op":"Increment", "amount":1 } }))
+            
+            .done(function () {
+                  var $element = $(document.getElementById(url));
+                  $element.find('.leancloud-visitors-count').text(counter.time + 1);
+            })
+            
+            .fail(function ({ responseJSON }) {
+                console.log('Failed to save Visitor num, with error message: ' + responseJSON.error);
+            })
+          } else {
+            
+              var $element = $(document.getElementById(url));
+              $element.find('.leancloud-visitors-count').text('Counter not initialized! See more at console err msg.');
+              console.error('ATTENTION! LeanCloud counter has security bug, see here how to solve it: https://github.com/theme-next/hexo-leancloud-counter-security. \n But you also can use LeanCloud without security, by set \'security\' option to \'false\'.');
+            
+          }
+        })
+      .fail(function ({ responseJSON }) {
+        console.log('LeanCloud Counter Error:' + responseJSON.code + " " + responseJSON.error);
+      });
+    }
+    
+
+    $(function() {
+      $.get('https://app-router.leancloud.cn/2/route?appId=' + "fmBmjTAI27951oFefYnEFRB2-gzGzoHsz")
+        .done(function ({ api_server }) {
+          var Counter = function (method, url, data) {
+            return $.ajax({
+              method: method,
+              url: `https://${api_server}/1.1${url}`,
+              headers: {
+                'X-LC-Id': "fmBmjTAI27951oFefYnEFRB2-gzGzoHsz",
+                'X-LC-Key': "JcQtVzu5N6qlksGuR72cvSR1",
+                'Content-Type': 'application/json',
+              },
+              data: data,
+            });
+          };
+          
+          addCount(Counter);
+          
+        })
+    });
+  </script>
+
+
+
+  
+
+  
+
+  
+  
+
+  
+  
+
+  
+    
+      <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+      },
+      TeX: {equationNumbers: { autoNumber: "AMS" }}
+    });
+</script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+      var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+    });
+</script>
+<script type="text/javascript" src="//cdn.jsdelivr.net/npm/mathjax@2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+    
+  
+
+
+  
+  
+  
+  <script src="/lib/needsharebutton/needsharebutton.js"></script>
+
+  <script>
+    
+      pbOptions = {};
+      
+          pbOptions.iconStyle = "box";
+      
+          pbOptions.boxForm = "horizontal";
+      
+          pbOptions.position = "bottomCenter";
+      
+          pbOptions.networks = "Weibo,Wechat,Douban,QQZone,Twitter,Facebook";
+      
+      new needShareButton('#needsharebutton-postbottom', pbOptions);
+    
+    
+  </script>
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+<script src="/live2dw/lib/L2Dwidget.min.js?0c58a1486de42ac6cc1c59c7d98ae887"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"jsonPath":"/live2dw/assets/Epsilon2.1.model.json"},"display":{"position":"left","width":130,"height":260},"mobile":{"show":false},"log":false});</script></body>
+</html>
