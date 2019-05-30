@@ -107,13 +107,14 @@
 
 
   <meta name="description" content="&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;上一节主要是对线性模型的解释和数学相关的简介，这一节会介绍更强大也更复杂的模型，支持向量机。">
+<meta name="keywords" content="机器学习">
 <meta property="og:type" content="article">
 <meta property="og:title" content="机器学习复习计划2 - 支持向量机">
 <meta property="og:url" content="http://whatsmore.info/2019/05/28/机器学习复习计划2-支持向量机/index.html">
 <meta property="og:site_name" content="除此之外">
 <meta property="og:description" content="&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;上一节主要是对线性模型的解释和数学相关的简介，这一节会介绍更强大也更复杂的模型，支持向量机。">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-05-28T12:36:14.800Z">
+<meta property="og:updated_time" content="2019-05-30T11:45:36.224Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="机器学习复习计划2 - 支持向量机">
 <meta name="twitter:description" content="&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;上一节主要是对线性模型的解释和数学相关的简介，这一节会介绍更强大也更复杂的模型，支持向量机。">
@@ -345,16 +346,46 @@
                 
               
 
-              <time title="创建时间：2019-05-28 20:33:57 / 修改时间：20:36:14" itemprop="dateCreated datePublished" datetime="2019-05-28T20:33:57+08:00">2019-05-28</time>
+              <time title="创建时间：2019-05-28 20:33:00" itemprop="dateCreated datePublished" datetime="2019-05-28T20:33:00+08:00">2019-05-28</time>
             
 
             
               
 
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2019-05-30 19:45:36" itemprop="dateModified" datetime="2019-05-30T19:45:36+08:00">2019-05-30</time>
               
             
           </span>
 
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing"><a href="/categories/好好学习/" itemprop="url" rel="index"><span itemprop="name">好好学习</span></a></span>
+
+                
+                
+              
+            </span>
           
 
           
@@ -406,7 +437,14 @@
       
         <p>&nbsp;&nbsp;&nbsp;&nbsp;上一节主要是对线性模型的解释和数学相关的简介，这一节会介绍更强大也更复杂的模型，支持向量机。</p>
 <a id="more"></a>
-<h2 id="支持向量机"><a href="#支持向量机" class="headerlink" title="支持向量机"></a>支持向量机</h2><h3 id="SVM定义"><a href="#SVM定义" class="headerlink" title="SVM定义"></a>SVM定义</h3><p>待续</p>
+<h2 id="支持向量机"><a href="#支持向量机" class="headerlink" title="支持向量机"></a>支持向量机</h2><p>&nbsp;&nbsp;&nbsp;&nbsp;<strong>支持向量机（SVM）</strong>是一个功能强大的机器学习模型，可以执行线性、非线性分类，回归以及异常检测任务。</p>
+<h3 id="线性SVM分类"><a href="#线性SVM分类" class="headerlink" title="线性SVM分类"></a>线性SVM分类</h3><p>&nbsp;&nbsp;&nbsp;&nbsp;SVM的基本思想是选择一条决策边界，它不仅可以分离两个类别，还要尽可能远离最近的实例。因此，SVM也被叫做“大间距分类器”。<br>&nbsp;&nbsp;&nbsp;&nbsp;需要注意的是，SVM的决策边界<strong>只受决策边界边缘的实例</strong>所决定，在类别的边缘内部增加再多的实例，对于决策边界不会造成任何影响。而那些影响决策边界的实例被称作<strong>支持向量</strong>。  </p>
+<h4 id="软间隔分类"><a href="#软间隔分类" class="headerlink" title="软间隔分类"></a>软间隔分类</h4><p>&nbsp;&nbsp;&nbsp;&nbsp;若我们严格地让所有实例都在正确的一侧，而且都不在分类线上，这就是<strong>硬间隔分类</strong>。但其只在数据线性可分离时才有效，而且它对异常值非常敏感，一旦有一个额外异常值数据，可能无法找出硬间隔，或者找到的决策边界非常差。<br>&nbsp;&nbsp;&nbsp;&nbsp;为了避免这些问题，<strong>软间隔分类</strong>使用了更灵活的模型，目标是找到最大间距和间隔违例（也就是在间隔内，甚至错误的一边的实例）之间的平衡。  </p>
+<h3 id="非线性SVM分类"><a href="#非线性SVM分类" class="headerlink" title="非线性SVM分类"></a>非线性SVM分类</h3><p>&nbsp;&nbsp;&nbsp;&nbsp;通常情况下线性SVM是有效的，但遇到非线性数据集时，一般有两种方式来解决。  </p>
+<h4 id="添加更多特征"><a href="#添加更多特征" class="headerlink" title="添加更多特征"></a>添加更多特征</h4><p>&nbsp;&nbsp;&nbsp;&nbsp;添加多项式特征，一般情况可以使数据集变得线性可分离。但是如果多项式太低阶，会难以处理复杂数据集，若太高阶，会产生非常多的特征，降低模型训练速度。<br>&nbsp;&nbsp;&nbsp;&nbsp;因此，<strong>核技巧</strong>被SVM用来模拟添加多项式特征，而实际并没有添加，因此避免了数据爆炸的组合特征。  </p>
+<h4 id="添加相似特征"><a href="#添加相似特征" class="headerlink" title="添加相似特征"></a>添加相似特征</h4><p>&nbsp;&nbsp;&nbsp;&nbsp;相似特征是由<strong>相似函数</strong>计算而得，相似函数可以测量每个实例和一个特定地标（landmark）之间的相似度。  </p>
+<h3 id="SVM回归"><a href="#SVM回归" class="headerlink" title="SVM回归"></a>SVM回归</h3><p>&nbsp;&nbsp;&nbsp;&nbsp;与分类相反，SVM回归的目标是让尽可能多的实例位于决策边界上，同时限制间隔违例（不在决策边界内的实例）。  </p>
+<h3 id="SVM原理"><a href="#SVM原理" class="headerlink" title="SVM原理"></a>SVM原理</h3><p>&nbsp;&nbsp;&nbsp;&nbsp;线性SVM分类器通过计算决策函数$w^T*x+b=w_1x_1+w_2x_2+…+w_nx_n+b$来预测新实例$x$的分类，若结果为正，则预测类别$\hat{y}$是正类（1），否则为负类（0），其中特征权重向量表示为$w$，偏置项表示为$b$。  </p>
 
       
     </div>
@@ -424,6 +462,12 @@
     
 
     <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/机器学习/" rel="tag"># 机器学习</a>
+          
+        </div>
       
 
       
@@ -623,7 +667,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#支持向量机"><span class="nav-number">1.</span> <span class="nav-text">支持向量机</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#SVM定义"><span class="nav-number">1.1.</span> <span class="nav-text">SVM定义</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#支持向量机"><span class="nav-number">1.</span> <span class="nav-text">支持向量机</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#线性SVM分类"><span class="nav-number">1.1.</span> <span class="nav-text">线性SVM分类</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#软间隔分类"><span class="nav-number">1.1.1.</span> <span class="nav-text">软间隔分类</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#非线性SVM分类"><span class="nav-number">1.2.</span> <span class="nav-text">非线性SVM分类</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#添加更多特征"><span class="nav-number">1.2.1.</span> <span class="nav-text">添加更多特征</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#添加相似特征"><span class="nav-number">1.2.2.</span> <span class="nav-text">添加相似特征</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#SVM回归"><span class="nav-number">1.3.</span> <span class="nav-text">SVM回归</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#SVM原理"><span class="nav-number">1.4.</span> <span class="nav-text">SVM原理</span></a></li></ol></li></ol></div>
             
 
           </div>
