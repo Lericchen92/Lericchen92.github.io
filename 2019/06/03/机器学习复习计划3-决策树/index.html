@@ -106,23 +106,25 @@
 
 
 
-  <meta name="description" content="划水运动员，摸鱼爱好者的乐园。">
-<meta property="og:type" content="website">
-<meta property="og:title" content="除此之外">
-<meta property="og:url" content="http://whatsmore.info/archives/2019/05/index.html">
+  <meta name="description" content="&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;上一节对支持向量机做了简单的介绍，这一部分会介绍与SVM类似的强大机器学习算法，决策树。">
+<meta name="keywords" content="机器学习">
+<meta property="og:type" content="article">
+<meta property="og:title" content="机器学习复习计划3 - 决策树">
+<meta property="og:url" content="http://whatsmore.info/2019/06/03/机器学习复习计划3-决策树/index.html">
 <meta property="og:site_name" content="除此之外">
-<meta property="og:description" content="划水运动员，摸鱼爱好者的乐园。">
+<meta property="og:description" content="&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;上一节对支持向量机做了简单的介绍，这一部分会介绍与SVM类似的强大机器学习算法，决策树。">
 <meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2019-06-03T13:42:49.796Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="除此之外">
-<meta name="twitter:description" content="划水运动员，摸鱼爱好者的乐园。">
+<meta name="twitter:title" content="机器学习复习计划3 - 决策树">
+<meta name="twitter:description" content="&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;上一节对支持向量机做了简单的介绍，这一部分会介绍与SVM类似的强大机器学习算法，决策树。">
 
 
 
 
 
 
-  <link rel="canonical" href="http://whatsmore.info/archives/2019/05/">
+  <link rel="canonical" href="http://whatsmore.info/2019/06/03/机器学习复习计划3-决策树/">
 
 
 
@@ -132,7 +134,7 @@
   };
 </script>
 
-  <title>归档 | 除此之外</title>
+  <title>机器学习复习计划3 - 决策树 | 除此之外</title>
   
 
 
@@ -178,7 +180,7 @@
     
   
 
-  <div class="container sidebar-position-left page-archive">
+  <div class="container sidebar-position-left page-post-detail">
     <header id="header" class="header" itemscope="" itemtype="http://schema.org/WPHeader">
       <div class="header-inner"><div class="site-brand-wrapper">
   <div class="site-meta ">
@@ -249,7 +251,7 @@
         
         
           
-          <li class="menu-item menu-item-archives menu-item-active">
+          <li class="menu-item menu-item-archives">
     <a href="/archives/" rel="section">
       <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>归档</a>
   </li>
@@ -261,28 +263,6 @@
 
   
     
-
-    
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-    
-
-  
-
 
   
 
@@ -308,113 +288,235 @@
           <div id="content" class="content">
             
 
+  <div id="posts" class="posts-expand">
+    
+
+  
+
   
   
   
-  <div class="post-block archive">
-    <div id="posts" class="posts-collapse">
-      <span class="archive-move-on"></span>
+
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://whatsmore.info/2019/06/03/机器学习复习计划3-决策树/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Shadowlight">
+      <meta itemprop="description" content="划水运动员，摸鱼爱好者的乐园。">
+      <meta itemprop="image" content="/images/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="除此之外">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">机器学习复习计划3 - 决策树
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2019-06-03 21:15:00 / 修改时间：21:42:49" itemprop="dateCreated datePublished" datetime="2019-06-03T21:15:00+08:00">2019-06-03</time>
+            
+
+            
+              
+
+              
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing"><a href="/categories/好好学习/" itemprop="url" rel="index"><span itemprop="name">好好学习</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2019/06/03/机器学习复习计划3-决策树/#comments" itemprop="discussionUrl">
+                  <span class="post-meta-item-text">评论数：</span> <span class="post-comments-count valine-comment-count" data-xid="/2019/06/03/机器学习复习计划3-决策树/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+             <span id="/2019/06/03/机器学习复习计划3-决策树/" class="leancloud_visitors" data-flag-title="机器学习复习计划3 - 决策树">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数：</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
 
       
-      <span class="archive-page-counter">
+      
+
+      
+        <p>&nbsp;&nbsp;&nbsp;&nbsp;上一节对支持向量机做了简单的介绍，这一部分会介绍与SVM类似的强大机器学习算法，决策树。</p>
+<a id="more"></a>
+<h2 id="决策树"><a href="#决策树" class="headerlink" title="决策树"></a>决策树</h2><p>&nbsp;&nbsp;&nbsp;&nbsp;<strong>决策树</strong>也是一类功能强大的机器学习模型，可以实现分类、回归甚至多输出任务，它们可以拟合复杂训练集，也是<strong>随机森林</strong>的基本组成部分。相对其他机器学习算法，决策树所需的数据准备工作非常少，完全不需要特征缩放或者集中。    </p>
+<h3 id="CART训练算法"><a href="#CART训练算法" class="headerlink" title="CART训练算法"></a>CART训练算法</h3><p>&nbsp;&nbsp;&nbsp;&nbsp;CART算法又称为分类与回归树，其想法非常简单：首先使用单个特征$k$和阈值$t_k$将训练集分成两个子集。$k$和$t_k$的最小化成本函数公式为：<br>$$J(k,t_k)=\frac {m_left}{m}G_left+\frac {m_right}{m}G_right$$<br>其中$G_{left/right}$衡量左/右子集的不纯度，$m_{left/right}$是左/右子集的实例数量。<br>&nbsp;&nbsp;&nbsp;&nbsp;当成功将训练集一分为二之后，将会使用相同的逻辑，继续分裂子集，然后是子集的子集，依次循环，直到抵达最大深度（超参max_depth控制）或者是再也找不到能降低不纯度的分裂，才会停止。<br>&nbsp;&nbsp;&nbsp;&nbsp;注意：Cart是一种贪心算法，从顶层开始搜索最优分裂，然后每层重复这个过程。</p>
+<h4 id="基尼系数"><a href="#基尼系数" class="headerlink" title="基尼系数"></a>基尼系数</h4><p>&nbsp;&nbsp;&nbsp;&nbsp;基尼系数是一个类似于熵的概念，对于第$i$个节点上类别为$k$的训练实例占比$p_{i,k}$，Gini定义如下：<br>$$G_i=1-\sum_{k=1}^n{p_{i,k}}^2$$<br>CART默认使用基尼系数来进行测量，但是也可以使用信息熵来衡量，大多数情况下产生的树都很相似。基尼系数的计算速度略微快一些，并且倾向于从树枝中分裂出最常见的类别，而信息熵倾向于生产更平衡的树。</p>
+
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/机器学习/" rel="tag"># 机器学习</a>
+          
+        </div>
+      
+
+      
+      
+        <div class="post-widgets">
         
+
         
+
         
           
-        
-        嗯..! 目前共计 7 篇日志。 继续努力。
-      </span>
-      
-
-      
-
-        
-        
-        
-
-        
-          
-          <div class="collection-title">
-            <h1 class="archive-year" id="archive-year-2019">2019</h1>
+          <div class="social_share">
+            
+            
+               <div id="needsharebutton-postbottom">
+                 <span class="btn">
+                    <i class="fa fa-share-alt" aria-hidden="true"></i>
+                 </span>
+               </div>
+            
           </div>
         
-        
-
-        
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2019/05/28/机器学习复习计划2-支持向量机/" itemprop="url">
-              
-                <span itemprop="name">机器学习复习计划2 - 支持向量机</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2019-05-28T20:33:00+08:00" content="2019-05-28">
-          05-28
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
+        </div>
+      
       
 
-        
-        
-        
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/05/28/机器学习复习计划2-支持向量机/" rel="next" title="机器学习复习计划2 - 支持向量机">
+                <i class="fa fa-chevron-left"></i> 机器学习复习计划2 - 支持向量机
+              </a>
+            
+          </div>
 
-        
-        
+          <span class="post-nav-divider"></span>
 
-        
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2019/05/25/世事难料/" itemprop="url">
-              
-                <span itemprop="name">世事难料</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2019-05-25T08:43:03+08:00" content="2019-05-25">
-          05-25
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
       
 
-    </div>
+      
+      
+    </footer>
   </div>
   
   
   
+  </article>
 
-  
 
+  </div>
 
 
           </div>
           
+
+  
+    <div class="comments" id="comments">
+    </div>
+  
+
+
 
         </div>
         
@@ -435,8 +537,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
             
@@ -529,6 +640,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#决策树"><span class="nav-number">1.</span> <span class="nav-text">决策树</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#CART训练算法"><span class="nav-number">1.1.</span> <span class="nav-text">CART训练算法</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#基尼系数"><span class="nav-number">1.1.1.</span> <span class="nav-text">基尼系数</span></a></li></ol></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
@@ -654,6 +781,10 @@
   
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=6.4.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=6.4.1"></script>
+
+
 
   
 
@@ -713,43 +844,42 @@
   
   <script>
     
-    function showTime(Counter) {
-      var entries = [];
+    function addCount(Counter) {
       var $visitors = $(".leancloud_visitors");
+      var url = $visitors.attr('id').trim();
+      var title = $visitors.attr('data-flag-title').trim();
 
-      $visitors.each(function () {
-        entries.push( $(this).attr("id").trim() );
-      });
-
-      Counter('get', '/classes/Counter', { where: JSON.stringify({ url: { "$in": entries } }) })
+      Counter('get', '/classes/Counter', { where: JSON.stringify({ url }) })
         .done(function ({ results }) {
-          var COUNT_CONTAINER_REF = '.leancloud-visitors-count';
-
-          if (results.length === 0) {
-            $visitors.find(COUNT_CONTAINER_REF).text(0);
-            return;
-          }
-
-          for (var i = 0; i < results.length; i++) {
-            var item = results[i];
-            var url = item.url;
-            var time = item.time;
-            var element = document.getElementById(url);
-
-            $(element).find(COUNT_CONTAINER_REF).text(time);
-          }
-          for(var i = 0; i < entries.length; i++) {
-            var url = entries[i];
-            var element = document.getElementById(url);
-            var countSpan = $(element).find(COUNT_CONTAINER_REF);
-            if( countSpan.text() == '') {
-              countSpan.text(0);
-            }
+          if (results.length > 0) {
+            var counter = results[0];
+            
+            Counter('put', `/classes/Counter/${counter.objectId}`, JSON.stringify({ time: { "__op":"Increment", "amount":1 } }))
+            
+            .done(function () {
+                  var $element = $(document.getElementById(url));
+                  $element.find('.leancloud-visitors-count').text(counter.time + 1);
+            })
+            
+            .fail(function ({ responseJSON }) {
+                console.log('Failed to save Visitor num, with error message: ' + responseJSON.error);
+            })
+          } else {
+            
+              Counter('post', '/classes/Counter', JSON.stringify({ title: title, url: url, time: 1}))
+                .done(function () {
+                  var $element = $(document.getElementById(url));
+                  $element.find('.leancloud-visitors-count').text(1);
+                })
+                .fail(function () {
+                  console.log('Failed to create');
+                });
+            
           }
         })
-        .fail(function ({ responseJSON }) {
-          console.log("LeanCloud Counter Error: " + responseJSON.code + " " + responseJSON.error);
-        });
+      .fail(function ({ responseJSON }) {
+        console.log('LeanCloud Counter Error:' + responseJSON.code + " " + responseJSON.error);
+      });
     }
     
 
@@ -769,9 +899,7 @@
             });
           };
           
-          if ($('.post-title-link').length >= 1) {
-            showTime(Counter);
-          }
+          addCount(Counter);
           
         })
     });
