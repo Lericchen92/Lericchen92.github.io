@@ -106,24 +106,25 @@
 
 
 
-  <meta name="description" content="&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;两周之前，突然被通知调岗，从NLP研发一下子调到了所谓图像处理，事前没有任何人给我说过这个事情，也没有任何人征求我的意见。不仅如此，新部门领导也不知道叫我做什么，我申请调回去也得到不可能的结论，那么就先叫我和一个新人去做排课系统……好吧，做就做吧，但是我不能理解，为什么我刚来，就必须和他们调研一个月的有同样的知识储备？好吧，这样我也能忍，不就是多加班">
+  <meta name="description" content="&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;许多机器学习问题所涉及的实例有成千上万的特征，这不仅导致训练速度非常缓慢，也增加了找到最优解决方案的难度。幸运的是，现实中我们可以大量减少特征数量，将难题转换成容易解决的问题，加快训练速度，使数据可视化。">
+<meta name="keywords" content="机器学习">
 <meta property="og:type" content="article">
-<meta property="og:title" content="世事难料">
-<meta property="og:url" content="http://whatsmore.info/2019/05/25/世事难料/index.html">
+<meta property="og:title" content="机器学习复习计划5 - 降维">
+<meta property="og:url" content="http://whatsmore.info/2019/06/04/机器学习复习计划5-降维/index.html">
 <meta property="og:site_name" content="除此之外">
-<meta property="og:description" content="&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;两周之前，突然被通知调岗，从NLP研发一下子调到了所谓图像处理，事前没有任何人给我说过这个事情，也没有任何人征求我的意见。不仅如此，新部门领导也不知道叫我做什么，我申请调回去也得到不可能的结论，那么就先叫我和一个新人去做排课系统……好吧，做就做吧，但是我不能理解，为什么我刚来，就必须和他们调研一个月的有同样的知识储备？好吧，这样我也能忍，不就是多加班">
+<meta property="og:description" content="&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;许多机器学习问题所涉及的实例有成千上万的特征，这不仅导致训练速度非常缓慢，也增加了找到最优解决方案的难度。幸运的是，现实中我们可以大量减少特征数量，将难题转换成容易解决的问题，加快训练速度，使数据可视化。">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-05-25T00:51:57.988Z">
+<meta property="og:updated_time" content="2019-06-04T13:34:13.002Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="世事难料">
-<meta name="twitter:description" content="&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;两周之前，突然被通知调岗，从NLP研发一下子调到了所谓图像处理，事前没有任何人给我说过这个事情，也没有任何人征求我的意见。不仅如此，新部门领导也不知道叫我做什么，我申请调回去也得到不可能的结论，那么就先叫我和一个新人去做排课系统……好吧，做就做吧，但是我不能理解，为什么我刚来，就必须和他们调研一个月的有同样的知识储备？好吧，这样我也能忍，不就是多加班">
+<meta name="twitter:title" content="机器学习复习计划5 - 降维">
+<meta name="twitter:description" content="&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;许多机器学习问题所涉及的实例有成千上万的特征，这不仅导致训练速度非常缓慢，也增加了找到最优解决方案的难度。幸运的是，现实中我们可以大量减少特征数量，将难题转换成容易解决的问题，加快训练速度，使数据可视化。">
 
 
 
 
 
 
-  <link rel="canonical" href="http://whatsmore.info/2019/05/25/世事难料/">
+  <link rel="canonical" href="http://whatsmore.info/2019/06/04/机器学习复习计划5-降维/">
 
 
 
@@ -133,7 +134,7 @@
   };
 </script>
 
-  <title>世事难料 | 除此之外</title>
+  <title>机器学习复习计划5 - 降维 | 除此之外</title>
   
 
 
@@ -303,7 +304,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://whatsmore.info/2019/05/25/世事难料/">
+    <link itemprop="mainEntityOfPage" href="http://whatsmore.info/2019/06/04/机器学习复习计划5-降维/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Shadowlight">
@@ -320,7 +321,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">世事难料
+          <h1 class="post-title" itemprop="name headline">机器学习复习计划5 - 降维
               
             
           </h1>
@@ -345,7 +346,7 @@
                 
               
 
-              <time title="创建时间：2019-05-25 08:43:03 / 修改时间：08:51:57" itemprop="dateCreated datePublished" datetime="2019-05-25T08:43:03+08:00">2019-05-25</time>
+              <time title="创建时间：2019-06-04 21:00:00 / 修改时间：21:34:13" itemprop="dateCreated datePublished" datetime="2019-06-04T21:00:00+08:00">2019-06-04</time>
             
 
             
@@ -356,6 +357,24 @@
           </span>
 
           
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing"><a href="/categories/好好学习/" itemprop="url" rel="index"><span itemprop="name">好好学习</span></a></span>
+
+                
+                
+              
+            </span>
+          
 
           
             
@@ -364,8 +383,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2019/05/25/世事难料/#comments" itemprop="discussionUrl">
-                  <span class="post-meta-item-text">评论数：</span> <span class="post-comments-count valine-comment-count" data-xid="/2019/05/25/世事难料/" itemprop="commentCount"></span>
+                <a href="/2019/06/04/机器学习复习计划5-降维/#comments" itemprop="discussionUrl">
+                  <span class="post-meta-item-text">评论数：</span> <span class="post-comments-count valine-comment-count" data-xid="/2019/06/04/机器学习复习计划5-降维/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -373,7 +392,7 @@
 
           
           
-             <span id="/2019/05/25/世事难料/" class="leancloud_visitors" data-flag-title="世事难料">
+             <span id="/2019/06/04/机器学习复习计划5-降维/" class="leancloud_visitors" data-flag-title="机器学习复习计划5 - 降维">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -404,7 +423,14 @@
       
 
       
-        <p>&nbsp;&nbsp;&nbsp;&nbsp;两周之前，突然被通知调岗，从NLP研发一下子调到了所谓图像处理，事前没有任何人给我说过这个事情，也没有任何人征求我的意见。不仅如此，新部门领导也不知道叫我做什么，我申请调回去也得到不可能的结论，那么就先叫我和一个新人去做排课系统……好吧，做就做吧，但是我不能理解，为什么我刚来，就必须和他们调研一个月的有同样的知识储备？好吧，这样我也能忍，不就是多加班看东西么，可以。<br>&nbsp;&nbsp;&nbsp;&nbsp;但是这样还是很不爽，毕竟核心算法，两个人去开发，很难做到完全统一，于是在我提出这个请求后，新领导把我安排去做排课系统的UE设计……嗯，到现在了，我算是明白了，不就是想叫我走么，可以的。<br>&nbsp;&nbsp;&nbsp;&nbsp;很后悔，之前的储备太少了，而且博客也因为各种事情没能及时更新，现在要开始恢复更新，争取3个月完成全部的复习任务，让自己变得强大，才好找到坑少的工作。<br>&nbsp;&nbsp;&nbsp;&nbsp;虽然后面我也知道了是哪个领导在搞我，但是无所谓了，自问心无愧就好，在NLP岗位上和组内其他人工作很快乐，我也得到了提升，项目的提升也比较大，嗯，就这样吧，加油让自己变得强大，变得没人敢欺负！加油！</p>
+        <p>&nbsp;&nbsp;&nbsp;&nbsp;许多机器学习问题所涉及的实例有成千上万的特征，这不仅导致训练速度非常缓慢，也增加了找到最优解决方案的难度。幸运的是，现实中我们可以大量减少特征数量，将难题转换成容易解决的问题，加快训练速度，使数据可视化。</p>
+<a id="more"></a>
+<h2 id="数据降维的主要方法"><a href="#数据降维的主要方法" class="headerlink" title="数据降维的主要方法"></a>数据降维的主要方法</h2><p>&nbsp;&nbsp;&nbsp;&nbsp;数据降维有两种方法，投影和流形学习。  </p>
+<h3 id="投影"><a href="#投影" class="headerlink" title="投影"></a>投影</h3><p>&nbsp;&nbsp;&nbsp;&nbsp;在现实世界中，高维空间的实例实际上受一个低得多的低维子空间影响。如将一个三维数据集投射到二维平面上，就得到一个新的二维数据集，数据集的维度就降低了。 </p>
+<h4 id="主成分分析"><a href="#主成分分析" class="headerlink" title="主成分分析"></a>主成分分析</h4><p>&nbsp;&nbsp;&nbsp;&nbsp;主成分分析（PCA）是很流行的降维算法，它识别出最接近数据的超平面，然后将数据投影在上面。PCA可以在训练集中识别出什么投影轴对差异性的贡献度最高，因为最大差异性的轴可以保留更多的信息。<br>&nbsp;&nbsp;&nbsp;&nbsp;定义第I条轴的单位向量就叫做第I个主成分。那么如何找到训练集的主成分，可以使用奇异值分解技术（SVD），它可以将训练集矩阵$X$分解为三个矩阵的点积$U·\sum·V^T$，其中$V^T$包含了所有的主成分。  </p>
+<h3 id="流形学习"><a href="#流形学习" class="headerlink" title="流形学习"></a>流形学习</h3><p>&nbsp;&nbsp;&nbsp;&nbsp;投影并不总是降维的最佳方法，当子空间弯曲或者转动时，投影就很容易出问题了，比如说著名的瑞士卷数据集。<br>&nbsp;&nbsp;&nbsp;&nbsp;瑞士卷是二维流形的一个例子，二维流形就是一个可以在更高维空间内弯曲和扭转的2D形状。  </p>
+<h4 id="局部线性嵌入"><a href="#局部线性嵌入" class="headerlink" title="局部线性嵌入"></a>局部线性嵌入</h4><p>&nbsp;&nbsp;&nbsp;&nbsp;局部线性嵌入（LLE）是另一种强大的非线性降维技术，它是一种流形学习技术，它首先测量每个算法如何与其最近的邻居线性相关，然后为训练集寻找一个能最大程度保留这些局部关系的低维表示。这样使得它擅长展开噪声比较少的弯曲的流形。  </p>
+<h3 id="其他降维技巧"><a href="#其他降维技巧" class="headerlink" title="其他降维技巧"></a>其他降维技巧</h3><p>1、多维缩放算法（MDS）：保持实例间的距离，降低维度；<br>2、等度量映射（Isomap）：将每个实例与其最近的邻居连接，创建连接图形，保留实例之间的测地距离，降低维度；<br>3、t-SNE算法在降低维度时，试图让相似的实例彼此靠近，不相似的实例彼此远离，主要用于可视化，尤其是将高维空间的实例集群可视化。</p>
 
       
     </div>
@@ -422,6 +448,12 @@
     
 
     <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/机器学习/" rel="tag"># 机器学习</a>
+          
+        </div>
       
 
       
@@ -452,8 +484,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/03/22/机器学习复习计划1-线性模型/" rel="next" title="机器学习复习计划1 - 线性模型">
-                <i class="fa fa-chevron-left"></i> 机器学习复习计划1 - 线性模型
+              <a href="/2019/06/04/机器学习复习计划4-集成学习/" rel="next" title="机器学习复习计划4 - 集成学习">
+                <i class="fa fa-chevron-left"></i> 机器学习复习计划4 - 集成学习
               </a>
             
           </div>
@@ -461,10 +493,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2019/05/28/机器学习复习计划2-支持向量机/" rel="prev" title="机器学习复习计划2 - 支持向量机">
-                机器学习复习计划2 - 支持向量机 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -512,8 +540,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
             
@@ -606,6 +643,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#数据降维的主要方法"><span class="nav-number">1.</span> <span class="nav-text">数据降维的主要方法</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#投影"><span class="nav-number">1.1.</span> <span class="nav-text">投影</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#主成分分析"><span class="nav-number">1.1.1.</span> <span class="nav-text">主成分分析</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#流形学习"><span class="nav-number">1.2.</span> <span class="nav-text">流形学习</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#局部线性嵌入"><span class="nav-number">1.2.1.</span> <span class="nav-text">局部线性嵌入</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#其他降维技巧"><span class="nav-number">1.3.</span> <span class="nav-text">其他降维技巧</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
