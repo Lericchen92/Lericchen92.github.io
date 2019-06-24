@@ -110,21 +110,23 @@
 <meta name="keywords" content="深度学习">
 <meta property="og:type" content="article">
 <meta property="og:title" content="深度学习复习计划0 - 神经网络">
-<meta property="og:url" content="http://whatsmore.info/2019/06/15/度学习复习计划0-神经网络/index.html">
+<meta property="og:url" content="http://whatsmore.info/2019/06/15/深度学习复习计划0-神经网络/index.html">
 <meta property="og:site_name" content="除此之外">
 <meta property="og:description" content="&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;人工神经网络是深度学习的核心，它们通用、强大、可扩展，成为解决大型和复杂机器学习任务的理想选择。">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-06-15T03:46:43.554Z">
+<meta property="og:image" content="http://whatsmore.info/2019/06/15/深度学习复习计划0-神经网络/1-1.png">
+<meta property="og:updated_time" content="2019-06-24T13:11:48.506Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="深度学习复习计划0 - 神经网络">
 <meta name="twitter:description" content="&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;人工神经网络是深度学习的核心，它们通用、强大、可扩展，成为解决大型和复杂机器学习任务的理想选择。">
+<meta name="twitter:image" content="http://whatsmore.info/2019/06/15/深度学习复习计划0-神经网络/1-1.png">
 
 
 
 
 
 
-  <link rel="canonical" href="http://whatsmore.info/2019/06/15/度学习复习计划0-神经网络/">
+  <link rel="canonical" href="http://whatsmore.info/2019/06/15/深度学习复习计划0-神经网络/">
 
 
 
@@ -304,7 +306,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://whatsmore.info/2019/06/15/度学习复习计划0-神经网络/">
+    <link itemprop="mainEntityOfPage" href="http://whatsmore.info/2019/06/15/深度学习复习计划0-神经网络/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Shadowlight">
@@ -346,12 +348,24 @@
                 
               
 
-              <time title="创建时间：2019-06-15 09:04:00 / 修改时间：11:46:43" itemprop="dateCreated datePublished" datetime="2019-06-15T09:04:00+08:00">2019-06-15</time>
+              <time title="创建时间：2019-06-15 09:04:00" itemprop="dateCreated datePublished" datetime="2019-06-15T09:04:00+08:00">2019-06-15</time>
             
 
             
               
 
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2019-06-24 21:11:48" itemprop="dateModified" datetime="2019-06-24T21:11:48+08:00">2019-06-24</time>
               
             
           </span>
@@ -383,8 +397,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2019/06/15/度学习复习计划0-神经网络/#comments" itemprop="discussionUrl">
-                  <span class="post-meta-item-text">评论数：</span> <span class="post-comments-count valine-comment-count" data-xid="/2019/06/15/度学习复习计划0-神经网络/" itemprop="commentCount"></span>
+                <a href="/2019/06/15/深度学习复习计划0-神经网络/#comments" itemprop="discussionUrl">
+                  <span class="post-meta-item-text">评论数：</span> <span class="post-comments-count valine-comment-count" data-xid="/2019/06/15/深度学习复习计划0-神经网络/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -392,7 +406,7 @@
 
           
           
-             <span id="/2019/06/15/度学习复习计划0-神经网络/" class="leancloud_visitors" data-flag-title="深度学习复习计划0 - 神经网络">
+             <span id="/2019/06/15/深度学习复习计划0-神经网络/" class="leancloud_visitors" data-flag-title="深度学习复习计划0 - 神经网络">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -425,17 +439,26 @@
       
         <p>&nbsp;&nbsp;&nbsp;&nbsp;人工神经网络是深度学习的核心，它们通用、强大、可扩展，成为解决大型和复杂机器学习任务的理想选择。</p>
 <a id="more"></a>
-<h3 id="感知机"><a href="#感知机" class="headerlink" title="感知机"></a>感知机</h3><p>&nbsp;&nbsp;&nbsp;&nbsp;感知机是最简单的人工神经网络架构之一，它会加权求和所有的输入($z=w_1x_1+w_2x_2+…+w_nx_n=w^T·x$)，然后对求值结果应用一个阶跃函数并产生最后的输出：$h_w(x)=step(z)=step(w^T·x)$。<br>&nbsp;&nbsp;&nbsp;&nbsp;常见的阶跃函数是heaviside或者带符号的函数。  </p>
-<h4 id="学习规则"><a href="#学习规则" class="headerlink" title="学习规则"></a>学习规则</h4><p>$$w_{i,j}^{(next step)}=w_{i,j}+\eta(\hat y_j - y_j)x_i$$<br>$w_{i,j}$是第$i$个输入神经元和第$j$个输出神经元的连接权重；<br>$x_i$是当前训练实例的第$i$个输入值；<br>$\hat y_j$是当前训练实例的第$j$个输出神经元的输出；<br>$y_j$是当前训练实例的第$j$个输出神经元的目标输出；<br>$\eta$是学习速率。  </p>
-<h4 id="存在的问题"><a href="#存在的问题" class="headerlink" title="存在的问题"></a>存在的问题</h4><p>&nbsp;&nbsp;&nbsp;&nbsp;它无法处理很微小的模型，如异或分类问题（XOR）等。  </p>
-<h3 id="多层感知机"><a href="#多层感知机" class="headerlink" title="多层感知机"></a>多层感知机</h3><p>&nbsp;&nbsp;&nbsp;&nbsp;事实证明感知机的限制可以通过将多个感知机堆叠起来的方式来消除，这种形式的神经网络就是多层感知机。<br>&nbsp;&nbsp;&nbsp;&nbsp;对于每个训练实例，反向传播算法先做一次预测（正向过程），度量误差，然后反向遍历每个层次来度量每个连接的误差贡献度（反向过程），最后再微调每个连接的权重来降低误差（梯度下降）。<br>&nbsp;&nbsp;&nbsp;&nbsp;除此之外，多层感知机将阶跃函数改成逻辑函数（Sigmoid函数），因为阶跃函数没有梯度，无法使用梯度下降法。反向传播过程还可以和其他激活函数一起使用，如双曲正切函数（tanh）或者ReLU函数。  </p>
+<h3 id="感知机"><a href="#感知机" class="headerlink" title="感知机"></a>感知机</h3><p>&nbsp;&nbsp;&nbsp;&nbsp;感知机是最简单的人工神经网络架构之一，神经元接收来自n个其他神经元传输过来的输入信号，并将这些输入值加权求和($z=w_1x_1+w_2x_2+…+w_nx_n=w^T·x$)，再对求值结果进行阈值检查后应用一个激活函数，产生最后的输出：$h_w(x)=f(z)=f(w^T·x - \theta)$。<br>&nbsp;&nbsp;&nbsp;&nbsp;这里的$\theta$指的是阈值，$f$指激活函数，我们选用最简单的阶跃函数，如下图所示:   <img src="/2019/06/15/深度学习复习计划0-神经网络/1-1.png" alt="图片1-1"></p>
+<h4 id="学习规则"><a href="#学习规则" class="headerlink" title="学习规则"></a>学习规则</h4><p>&nbsp;&nbsp;&nbsp;&nbsp;神经网络的学习规则，就是调整神经元之间的<strong>连接权重</strong>（表明对特征的关注度）和神经元内部的<strong>阈值</strong>（决定有多少加权和来激活神经元）。<br>&nbsp;&nbsp;&nbsp;&nbsp;假设学习规则是这样的：<br>$$\begin{align}<br>w_{new}&amp;=w_{old}+\epsilon  \\<br>\theta_{new}&amp;=\theta_{old}+\epsilon<br>\end{align}$$<br>&nbsp;&nbsp;&nbsp;&nbsp;其中$\epsilon = y-y’$，$y$是希望输出，$y’$是实际输出，那么$\epsilon$就是两者的差值，而这个差值，就是网络连接权重和阈值的调整动力。感知机就是通过这样反复试错，来找到最终拟合实际输出的权重和阈值的。<br>&nbsp;&nbsp;&nbsp;&nbsp;这里为了表示更加方便，可以将阈值$\theta$视为$w_0$，其输入值固定为1，这样依赖，权重和阈值的学习可以统一成一个权重的学习，从而简化学习规则：<br>$$\begin{align}<br>y&amp;=w_1x_1+w_2x_2+…+w_nx_n-\theta \\<br>&amp;=w_0x_0+w_1x_1+w_2x_2+…+w_nx_n    \\<br>&amp;=\sum_{i=0}^nw_ix_i<br>\end{align}<br>$$<br>&nbsp;&nbsp;&nbsp;&nbsp;在简化之后，感知机的权值调整规则可以统一调整为：<br>$$\begin{align}<br>w_{inew}&amp;=w_{iold}+\Delta w_i  \\<br>\Delta w_i&amp;=\eta(y_i-{y_i}’)x_i<br>\end{align}$$<br>&nbsp;&nbsp;&nbsp;&nbsp;其中$\eta\in(0,1)$称为学习率，可以减缓每一步权重调整的强度，如果太小，可能收敛速度会非常慢；如果太大，会错过网络最优解，因此该值较多依赖于人工经验（属于超参数），通常将其初始值设置为较小的值（如0.1）。</p>
+<h4 id="存在的问题"><a href="#存在的问题" class="headerlink" title="存在的问题"></a>存在的问题</h4><p>&nbsp;&nbsp;&nbsp;&nbsp;单层神经网络无法解决线性不可分割的问题，如异或分类问题（XOR）等。  </p>
+<h3 id="多层感知机"><a href="#多层感知机" class="headerlink" title="多层感知机"></a>多层感知机</h3><p>&nbsp;&nbsp;&nbsp;&nbsp;要解决线性不可分问题，就需要让网络复杂起来，因为复杂网络的表征能力比较强，因此可以在输入层和输出层之间添加一层神经元，称其为隐藏层（Hidden Layer），隐藏层和输出层的神经元都有激活函数。事实证明，这种形式的神经网络有效的解决了线性不可分问题，这就是多层感知机（又称前馈神经网络）。  </p>
+<h4 id="神经元的几何意义"><a href="#神经元的几何意义" class="headerlink" title="神经元的几何意义"></a>神经元的几何意义</h4><p>&nbsp;&nbsp;&nbsp;&nbsp;对于一个具有$n$个特征的对象$x$，若令学习规则方程为0，则可视为在n维空间的超平面P，那么神经元就可以看作一个由超平面划分空间位置的识别器。<br>&nbsp;&nbsp;&nbsp;&nbsp;举个例子，假设神经元模型构造了$w_1x_1+w_2x_2-\theta=0$的超平面方程，那么其学习方式就是不断调整$w_1,w_2$（旋转超平面）和$\theta$（平移超平面）的值，以尽可能让所有样本的分类都准确。<br>&nbsp;&nbsp;&nbsp;&nbsp;那么如果多添加一个神经元，就相当于新增一个超平面，划分更多子空间。理论上这个过程可以一直下去，直到所有分类都是准确的。    </p>
+<h4 id="多层网络的构造方向"><a href="#多层网络的构造方向" class="headerlink" title="多层网络的构造方向"></a>多层网络的构造方向</h4><p>&nbsp;&nbsp;&nbsp;&nbsp;前面提到，神经网络可以通过添加神经元的个数来增加分类精度，这样就会让神经网络变得浅而宽。而另外一个进化方向就是朝着纵深进行，也就是减少隐藏层的神经元数量，增加神经网络的层数，让神经网络向着深而瘦的方向发展。<br>&nbsp;&nbsp;&nbsp;&nbsp;那么哪个方向更好一些呢？研究显示，增加网络的层数会显著提升神经网络系统的学习性能，而网络层数太深的话，BP算法会带来梯度消失问题，从而导致增加层数无法提升性能。因此，深度学习还是应当考虑朝着“纵深方向”发展的。</p>
+<h3 id="损失函数"><a href="#损失函数" class="headerlink" title="损失函数"></a>损失函数</h3><p>&nbsp;&nbsp;&nbsp;&nbsp;在监督学习算法中，为了衡量实际输出值$\bar Y$与预期值$Y$的差距，需要定义一个<strong>损失函数</strong>（Loss Function）$L(Y,\bar Y)=L(Y,f(X))$来衡量二者之间的差距。<br>&nbsp;&nbsp;&nbsp;&nbsp;在很多地方我们可能也看到过“代价函数（Cost Function）”的描述，吴恩达老师对于这两个概念的定义区别如下：损失函数是针对单个样本来说的，而代价函数是针对全体样本来说的。<br>&nbsp;&nbsp;&nbsp;&nbsp;那么……为什么不最大化正确分类数目，反而要最小化损失函数呢？因为正确分类的数量对参数的调整不敏感，导致很难通过改变权重和偏置来确定正确的优化方向。  </p>
+<h4 id="常见的损失函数"><a href="#常见的损失函数" class="headerlink" title="常见的损失函数"></a>常见的损失函数</h4><p>（1）0-1损失函数(0-1 loss function)：<br>$$L(Y, f(X))=\begin{cases}1,&amp;Y\neq f(X)\\0,&amp;Y=f(X)\end{cases}$$<br>&nbsp;&nbsp;&nbsp;&nbsp;也就是说，当预测错误时，损失函数为1，当预测正确时，损失函数值为0。该损失函数不考虑预测值和真实值的误差程度。只要错误，就是1。<br>（2）绝对损失函数(absolute loss function)：<br>$$L(Y,f(X))=|Y-f(X)|$$<br>&nbsp;&nbsp;&nbsp;&nbsp;取绝对值避免负值出现。<br>（3）平方损失函数(quadratic loss function)：<br>$$L(Y,f(X))={\frac{1}{2}(Y-f(x))^2}$$<br>&nbsp;&nbsp;&nbsp;&nbsp;计算预测值与实际值差的平方，前面的$\frac{1}{2}$是为了方便求导。<br>（4）对数损失函数(logarithmic loss function):<br>$$L(y,p(y|x))=−logp(y|x)$$<br>&nbsp;&nbsp;&nbsp;&nbsp;该损失函数用到了极大似然估计的思想。P(Y|X)通俗的解释就是：在当前模型的基础上，对于样本X，其预测值为Y，也就是预测正确的概率。由于概率之间的同时满足需要使用乘法，为了将其转化为加法，我们将其取对数。最后由于是损失函数，所以预测正确的概率越高，其损失值应该是越小，因此再加个负号取个反。</p>
+<h4 id="常见的代价函数"><a href="#常见的代价函数" class="headerlink" title="常见的代价函数"></a>常见的代价函数</h4><p>（1）均方误差(Mean Squared Error):<br>$$MSE=\frac{1}{N}\sum_{i=1}^N(y^{(i)}−f(x^{(i)}))$$<br>&nbsp;&nbsp;&nbsp;&nbsp;均方误差是指参数估计值与参数真值之差平方的期望值; MSE可以评价数据的变化程度，MSE的值越小，说明预测模型描述实验数据具有更好的精确度。（i表示第i个样本，N表示样本总数）通常做回归问题的代价函数。<br>（2）均方根误差:<br>$$RMSE=\sqrt{\frac{1}{N}\sum_{i=1}^N(y^{(i)}−f(x^{(i)}))}$$<br>&nbsp;&nbsp;&nbsp;&nbsp;均方根误差是均方误差的算术平方根，能够直观观测预测值与实际值的离散程度。通常做回归算法的性能指标。<br>（3）平均绝对误差（Mean Absolute Error）<br>$$MAE=\frac{1}{N}\sum_{i=1}^N|y^{(i)}−f(x^{(i)})|$$<br>&nbsp;&nbsp;&nbsp;&nbsp;平均绝对误差是绝对误差的平均值，平均绝对误差能更好地反映预测值误差的实际情况。通常做回归算法的性能指标。<br>（4）交叉熵代价函数（Cross Entry）<br>$$H(p,q)=−\frac{1}{N}\sum_{i=1}^NP(x^{(i)})logq(x^{(-i)})$$<br>&nbsp;&nbsp;&nbsp;&nbsp;交叉熵是用来评估当前训练得到的概率分布与真实分布的差异情况，减少交叉熵损失就是在提高模型的预测准确率。其中$p(x)$是指真实分布的概率，$q(x)$是模型通过数据计算出来的概率估计。<br>&nbsp;&nbsp;&nbsp;&nbsp;比如对于二分类模型的交叉熵代价函数（可参考逻辑回归一节）：<br>$$L(w,b)=−\frac{1}{N}\sum_{i=1}^N(y^{i}logf(x^{i})+(1−y^{i})log(1−f(x^{i})))$$<br>&nbsp;&nbsp;&nbsp;&nbsp;其中$f(x)$可以是sigmoid函数或深度学习中的其它激活函数，$y(i)∈(0,1)$。通常做分类问题的代价函数。<br>&nbsp;&nbsp;&nbsp;&nbsp;在求得损失后，就可以用其来反向调节网络的权值，以最小化损失，更好拟合所需函数。而神经网络的权值调节方法有两种，一种是从后往前调节，一种是从前往后调整参数，前者的典型代表就是“误差反向传播”，后者的代表就是“深度学习”。  </p>
+<h3 id="误差反向传播"><a href="#误差反向传播" class="headerlink" title="误差反向传播"></a>误差反向传播</h3><p>&nbsp;&nbsp;&nbsp;&nbsp;对于误差反向传播，简单地说就是首先随机设置初值，计算网络输出，然后根据输出和预期的差值，迭代计算，修改前面各层参数，直到网络收敛稳定。最有名的反向传播算法就是<strong>BP算法</strong>。</p>
+<h4 id="BP算法"><a href="#BP算法" class="headerlink" title="BP算法"></a>BP算法</h4><p>&nbsp;&nbsp;&nbsp;&nbsp;BP算法的本质是一个双向算法，其步骤为：（1）正向传播输入信息，实现分类功能；（2）反向传播误差，调整网络权值。<br>&nbsp;&nbsp;&nbsp;&nbsp;（1）正向传播输入信息：<br>&nbsp;&nbsp;&nbsp;&nbsp;什么是正向传播信息呢，就是将信号通过激活函数一层层向后传播，直到抵达输出层，前面提到的多层感知机就是实现了这样的功能。在这里我们假设激活函数为Sigmoid函数($f(x)=\frac{1}{1+e^{-x}}$)，其一是因为它将输出值域锁定在[0,1]之间，便于调节，其二因为它的求导形式非常简单（$f’(x)=f(x)(1-f(x))$）。  </p>
+<h4 id="链式法则"><a href="#链式法则" class="headerlink" title="链式法则"></a>链式法则</h4><p>&nbsp;&nbsp;&nbsp;&nbsp;对于每个训练实例，反向传播算法先做一次预测（正向过程），度量误差，然后反向遍历每个层次来度量每个连接的误差贡献度（反向过程），最后再微调每个连接的权重来降低误差（梯度下降）。<br>&nbsp;&nbsp;&nbsp;&nbsp;除此之外，多层感知机将阶跃函数改成逻辑函数（Sigmoid函数），因为阶跃函数没有梯度，无法使用梯度下降法。反向传播过程还可以和其他激活函数一起使用，如双曲正切函数（tanh）或者ReLU函数。  </p>
 <h3 id="超参数调节"><a href="#超参数调节" class="headerlink" title="超参数调节"></a>超参数调节</h3><p>&nbsp;&nbsp;&nbsp;&nbsp; 神经网络的灵活性带来了太多的超参数需要调整，即使是简单的多层感知机，也有许多参数需要调整：层数、每层神经元数、激活函数类型、初始化权重等等……那么如何选择最优秀的超参数组合呢？<br>&nbsp;&nbsp;&nbsp;&nbsp; 可以使用交叉验证的网格搜索来查找正确的超参数，但是超参太多的话，网格搜索会很耗时，因此，使用随机搜索法的效果会好很多。另外，还可以使用如Oscar的工具，来更快查找超参数集。  </p>
 <h4 id="隐藏层个数"><a href="#隐藏层个数" class="headerlink" title="隐藏层个数"></a>隐藏层个数</h4><p>&nbsp;&nbsp;&nbsp;&nbsp; 只要神经元足够多，仅有一个隐藏层的感知机都可以建模大部分复杂的函数，但是深层网络比浅层网络有更高的参数效率：深层网络可以用非常少的神经元来建模复杂函数，因此训练起来更加快速。  </p>
 <h4 id="隐藏层的神经元数"><a href="#隐藏层的神经元数" class="headerlink" title="隐藏层的神经元数"></a>隐藏层的神经元数</h4><p>&nbsp;&nbsp;&nbsp;&nbsp; 通常来说，增加神经元数量比增加层数会带来更多的消耗，更简单的做法是使用比实际所需更多的层次和神经元，然后提前结束训练来避免过度拟合（以及使用其他正则化方法和dropout）。  </p>
 <h3 id="梯度消失-爆炸问题"><a href="#梯度消失-爆炸问题" class="headerlink" title="梯度消失/爆炸问题"></a>梯度消失/爆炸问题</h3><p>&nbsp;&nbsp;&nbsp;&nbsp; 反向传播算法从输出层反向作用到输入层，在过程中传播误差梯度，一旦算法根据网络参数计算出来成本函数的梯度，就会根据梯度下降步骤来修正参数。<br>&nbsp;&nbsp;&nbsp;&nbsp; 但是梯度经常会随着算法进展到更低层时会变得原来越小，这样导致梯度下降在更低层网络连接权值更新方面基本没有改变，而且训练不会收敛到好的结果，这就是<strong>梯度消失</strong>问题。而在一些例子中发生相反的现象：梯度越来越大，导致很多层的权值疯狂增大，使得算法发散，这就是<strong>梯度爆炸</strong>问题（常出现在循环神经网络中）。  </p>
 <h4 id="Xavier初始化和He初始化"><a href="#Xavier初始化和He初始化" class="headerlink" title="Xavier初始化和He初始化"></a>Xavier初始化和He初始化</h4><p>&nbsp;&nbsp;&nbsp;&nbsp; 当使用Sigmoid激活函数时，使用Xavier初始化，来避免梯度消失/爆炸问题；而使用ReLU激活函数（及其变种，包括ELU激活）的初始化方法，称为He初始化。  </p>
 <h4 id="非饱和激活函数"><a href="#非饱和激活函数" class="headerlink" title="非饱和激活函数"></a>非饱和激活函数</h4><p>&nbsp;&nbsp;&nbsp;&nbsp; ReLU激活函数并不是完美的，它会出现dying ReLU问题：在训练过程中，一些神经元实际上已经死了，它只输出0，除非ReLU函数的梯度为0，并且输入为负，否则这个神经元就不会再重新开始工作。<br>&nbsp;&nbsp;&nbsp;&nbsp; 要解决这个问题，ReLU函数的变种如leaky ReLU、ELU等。  </p>
-<h4 id="批量归一化"><a href="#批量归一化" class="headerlink" title="批量归一化"></a>批量归一化</h4><p>&nbsp;&nbsp;&nbsp;&nbsp; 尽管使用Xavier初始化和He初始化可以在训练初期降低梯度消失/爆炸问题，但是在训练过程中很难避免不再出现这些问题。因此，批量归一化（BN）技术提出来解决梯度消失/爆炸问题。  </p>
+<h4 id="批量归一化"><a href="#批量归一化" class="headerlink" title="批量归一化"></a>批量归一化</h4><p>&nbsp;&nbsp;&nbsp;&nbsp; 尽管使用Xavier初始化和He初始化可以在训练初期降低梯度消失/爆炸问题，但是在训练过程中很难避免不再出现这些问题。因此，批量归一化（BN）技术提出来解决梯度消失/爆炸问题。</p>
+<h4 id="dropout"><a href="#dropout" class="headerlink" title="dropout"></a>dropout</h4><p>丢弃学习（dropout）是指在深度学习网络训练过程中，对于神经网络单元，按照一定的概率p将其暂时从网络中丢弃，“丢弃学习”分为两个阶段：学习阶段和测试阶段。<br>在学习阶段，以概率p主动临时忽略部分隐藏节点，以减少网络大小，让神经网络学习数据的局部特征，以<strong>增强其泛化能力</strong>。<br>在测试阶段，将参与学习的节点和被隐藏的节点以一定概率p加权求和得到网络输出。</p>
 
       
     </div>
@@ -664,7 +687,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#感知机"><span class="nav-number">1.</span> <span class="nav-text">感知机</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#学习规则"><span class="nav-number">1.1.</span> <span class="nav-text">学习规则</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#存在的问题"><span class="nav-number">1.2.</span> <span class="nav-text">存在的问题</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#多层感知机"><span class="nav-number">2.</span> <span class="nav-text">多层感知机</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#超参数调节"><span class="nav-number">3.</span> <span class="nav-text">超参数调节</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#隐藏层个数"><span class="nav-number">3.1.</span> <span class="nav-text">隐藏层个数</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#隐藏层的神经元数"><span class="nav-number">3.2.</span> <span class="nav-text">隐藏层的神经元数</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#梯度消失-爆炸问题"><span class="nav-number">4.</span> <span class="nav-text">梯度消失/爆炸问题</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Xavier初始化和He初始化"><span class="nav-number">4.1.</span> <span class="nav-text">Xavier初始化和He初始化</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#非饱和激活函数"><span class="nav-number">4.2.</span> <span class="nav-text">非饱和激活函数</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#批量归一化"><span class="nav-number">4.3.</span> <span class="nav-text">批量归一化</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#感知机"><span class="nav-number">1.</span> <span class="nav-text">感知机</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#学习规则"><span class="nav-number">1.1.</span> <span class="nav-text">学习规则</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#存在的问题"><span class="nav-number">1.2.</span> <span class="nav-text">存在的问题</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#多层感知机"><span class="nav-number">2.</span> <span class="nav-text">多层感知机</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#神经元的几何意义"><span class="nav-number">2.1.</span> <span class="nav-text">神经元的几何意义</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#多层网络的构造方向"><span class="nav-number">2.2.</span> <span class="nav-text">多层网络的构造方向</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#损失函数"><span class="nav-number">3.</span> <span class="nav-text">损失函数</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#常见的损失函数"><span class="nav-number">3.1.</span> <span class="nav-text">常见的损失函数</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#常见的代价函数"><span class="nav-number">3.2.</span> <span class="nav-text">常见的代价函数</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#误差反向传播"><span class="nav-number">4.</span> <span class="nav-text">误差反向传播</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#BP算法"><span class="nav-number">4.1.</span> <span class="nav-text">BP算法</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#链式法则"><span class="nav-number">4.2.</span> <span class="nav-text">链式法则</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#超参数调节"><span class="nav-number">5.</span> <span class="nav-text">超参数调节</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#隐藏层个数"><span class="nav-number">5.1.</span> <span class="nav-text">隐藏层个数</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#隐藏层的神经元数"><span class="nav-number">5.2.</span> <span class="nav-text">隐藏层的神经元数</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#梯度消失-爆炸问题"><span class="nav-number">6.</span> <span class="nav-text">梯度消失/爆炸问题</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Xavier初始化和He初始化"><span class="nav-number">6.1.</span> <span class="nav-text">Xavier初始化和He初始化</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#非饱和激活函数"><span class="nav-number">6.2.</span> <span class="nav-text">非饱和激活函数</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#批量归一化"><span class="nav-number">6.3.</span> <span class="nav-text">批量归一化</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#dropout"><span class="nav-number">6.4.</span> <span class="nav-text">dropout</span></a></li></ol></li></ol></div>
             
 
           </div>
