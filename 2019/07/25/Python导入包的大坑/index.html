@@ -114,7 +114,7 @@
 <meta property="og:description" content="&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;今天在工作时要导入不同文件夹下的py脚本内函数，结果遇到各种坑，趟了一上午算是搞明白了，现在记录下。">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="http://whatsmore.info/2019/07/25/Python导入包的大坑/1-1.png">
-<meta property="og:updated_time" content="2019-07-25T06:51:35.619Z">
+<meta property="og:updated_time" content="2019-07-25T07:01:08.096Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Python导入包的大坑">
 <meta name="twitter:description" content="&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;今天在工作时要导入不同文件夹下的py脚本内函数，结果遇到各种坑，趟了一上午算是搞明白了，现在记录下。">
@@ -347,7 +347,7 @@
                 
               
 
-              <time title="创建时间：2019-07-25 11:03:11 / 修改时间：14:51:35" itemprop="dateCreated datePublished" datetime="2019-07-25T11:03:11+08:00">2019-07-25</time>
+              <time title="创建时间：2019-07-25 11:03:11 / 修改时间：15:01:08" itemprop="dateCreated datePublished" datetime="2019-07-25T11:03:11+08:00">2019-07-25</time>
             
 
             
@@ -422,7 +422,7 @@
 <blockquote>
 <p>相对引用注意事项<br>1、相对引用发生在package内部，引用模块那一级一定要有<strong>init</strong>.py<br>2、调用的脚本的位置一定要在package外，如果脚本在引用模块那一级，实际上是找不到上一级的东西的，会报错。<br>ValueError: Attempted relative import in non-package。<br>3、使用相对引用的模块，不能直接作为脚本跑，否则会报错ValueError: Attempted relative import in non-package。<br>4、相对引用依赖文件<strong>name</strong>，而如果跑那个脚本的话，文件名字就成了<strong>main</strong>，这样<strong>package</strong>会被设为None，而相对引用依赖<strong>package</strong>的值，就找不到相对引用的位置了，会报Non-package的错误。<br>解决方法： import 该脚本    </p>
 </blockquote>
-<p>后来，在Stackoverflow上面查到了方法，代码改写为：<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> sys</span><br><span class="line">sys.path.insert(<span class="number">0</span>, <span class="string">"b"</span>)</span><br><span class="line"></span><br><span class="line"><span class="keyword">from</span> b <span class="keyword">import</span> ba, nob</span><br><span class="line"></span><br><span class="line">ba.prb()</span><br><span class="line">nob()</span><br></pre></td></tr></table></figure></p>
+<p>后来，在<a href="https://stackoverflow.com/questions/72852/how-to-do-relative-imports-in-python/73149#73149" title="How to do relative imports in Python?" target="_blank" rel="noopener">Stackoverflow</a>上面查到了方法，代码改写为：<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> sys</span><br><span class="line">sys.path.insert(<span class="number">0</span>, <span class="string">"b"</span>)</span><br><span class="line"></span><br><span class="line"><span class="keyword">from</span> b <span class="keyword">import</span> ba, nob</span><br><span class="line"></span><br><span class="line">ba.prb()</span><br><span class="line">nob()</span><br></pre></td></tr></table></figure></p>
 <p>前面一段是将路径b加入到python的系统路径中，接下来只需要引入b文件的两个模块，就可以得到结果：<code>bbbbbbb nooooob</code>。<br>但是坑的地方就在这里，如果这段代码在Spyder下面运行，会出现……<code>No module named &#39;b&#39;</code>错误，原因就是编译器处理py文件的<strong>路径</strong>并不一致，Spyder是<code>runfile(&#39;E:/tmp/a/aa.py&#39;, wdir=&#39;E:/tmp/a&#39;)</code>，这个路径下没有b文件夹，因此会导入失败，而VSCode是<code>cd e:\tmp &amp;&amp; cmd blabla</code>，故在VSCode下这样设置路径是合理的。<br>那么在Spyder路径下，需要改为<code>sys.path.insert(0, &quot;../b&quot;)</code>，就可以得到正常结果了，但是这代码在VSCode下，会抛出<code>No module named &#39;b&#39;</code>错误，非常amazing！</p>
 
       
@@ -471,8 +471,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/06/15/深度学习复习计划5-自动编码器/" rel="next" title="深度学习复习计划5 - 自动编码器">
-                <i class="fa fa-chevron-left"></i> 深度学习复习计划5 - 自动编码器
+              <a href="/2019/06/15/深度学习复习计划4-自然语言处理/" rel="next" title="深度学习复习计划4 - 自然语言处理">
+                <i class="fa fa-chevron-left"></i> 深度学习复习计划4 - 自然语言处理
               </a>
             
           </div>
