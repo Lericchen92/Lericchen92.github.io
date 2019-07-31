@@ -113,7 +113,7 @@
 <meta property="og:site_name" content="除此之外">
 <meta property="og:description" content="&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;卷积神经网络(Convolutional neural networks，CNN)起源于对大脑视觉皮层的研究，常用于图像识别，当然，CNN也成功用于其他任务，如语音识别或者自然语言处理。">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-06-15T06:34:57.212Z">
+<meta property="og:updated_time" content="2019-07-31T12:20:10.821Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="深度学习复习计划1 - 卷积神经网络">
 <meta name="twitter:description" content="&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;卷积神经网络(Convolutional neural networks，CNN)起源于对大脑视觉皮层的研究，常用于图像识别，当然，CNN也成功用于其他任务，如语音识别或者自然语言处理。">
@@ -345,12 +345,24 @@
                 
               
 
-              <time title="创建时间：2019-06-15 11:51:30 / 修改时间：14:34:57" itemprop="dateCreated datePublished" datetime="2019-06-15T11:51:30+08:00">2019-06-15</time>
+              <time title="创建时间：2019-06-15 11:51:30" itemprop="dateCreated datePublished" datetime="2019-06-15T11:51:30+08:00">2019-06-15</time>
             
 
             
               
 
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2019-07-31 20:20:10" itemprop="dateModified" datetime="2019-07-31T20:20:10+08:00">2019-07-31</time>
               
             
           </span>
@@ -407,9 +419,15 @@
         <p>&nbsp;&nbsp;&nbsp;&nbsp;卷积神经网络(Convolutional neural networks，CNN)起源于对大脑视觉皮层的研究，常用于图像识别，当然，CNN也成功用于其他任务，如语音识别或者自然语言处理。</p>
 <a id="more"></a>
 <h3 id="网络结构"><a href="#网络结构" class="headerlink" title="网络结构"></a>网络结构</h3><p>&nbsp;&nbsp;&nbsp;&nbsp;CNN是一种特殊类型的神经网络，通常由以下几层组成，分别是卷积层(Convolutions)、池化层(Pooling)和全连接层(Fully Connected)。为什么不使用常规全连接深度神经网络进行图像识别呢？因为其参数过多，使得它在处理大图时无能为力，如100*100的图像，如果第一层有1000个神经元，那么需要1000万个连接，而CNN使用部分连接层，解决了这个问题。  </p>
-<h4 id="卷积层"><a href="#卷积层" class="headerlink" title="卷积层"></a>卷积层</h4><p>&nbsp;&nbsp;&nbsp;&nbsp;卷积层(Convolution layer，CONV)是使用执行卷积操作的滤波器，扫描与其尺寸相关的输入I，超参数包括过滤器大小F和步幅S，产生的输出O称为特征映射或激活映射。该步骤可以推广到一维和三维场景。<br>&nbsp;&nbsp;&nbsp;&nbsp;第一卷积层的神经元不会连接到输入图像的每个像素，只与其感受野内的像素相连接，然后第二卷积层的每个神经元仅连接到位于第一层的小矩阵的神经元。这种结构允许网络集中在第一个隐藏层的缔结特征中，然后在下一个隐藏层中将它们组装成比较高阶的特征，这就是CNN在图像识别方面效果很好的原因。   </p>
-<h4 id="池化层"><a href="#池化层" class="headerlink" title="池化层"></a>池化层</h4><p>&nbsp;&nbsp;&nbsp;&nbsp;池化层(Pooling layer，POOL)是一种下采样操作，通常在卷积层之后应用，它具有一定的空间不变性。最大池化和平均池化是分别取最大值和平均值的特殊池化类型。   </p>
-<h3 id="CNN架构"><a href="#CNN架构" class="headerlink" title="CNN架构"></a>CNN架构</h3><h4 id="LeNet"><a href="#LeNet" class="headerlink" title="LeNet"></a>LeNet</h4><h4 id="AlexNet"><a href="#AlexNet" class="headerlink" title="AlexNet"></a>AlexNet</h4><h4 id="GoogLeNet"><a href="#GoogLeNet" class="headerlink" title="GoogLeNet"></a>GoogLeNet</h4><h4 id="ResNet"><a href="#ResNet" class="headerlink" title="ResNet"></a>ResNet</h4>
+<h4 id="卷积层"><a href="#卷积层" class="headerlink" title="卷积层"></a>卷积层</h4><p>&nbsp;&nbsp;&nbsp;&nbsp;它是CNN的核心，通过“局部感知”和“参数共享”，实现降维和提取特征。</p>
+<h5 id="卷积核"><a href="#卷积核" class="headerlink" title="卷积核"></a>卷积核</h5><p>&nbsp;&nbsp;&nbsp;&nbsp;在卷积神经网络中，通常会用一个小矩阵去扫描整张图像，在这个小矩阵的作用下，图像中所有的像素点会被线性变换组合，形成下一层的神经元，这个矩阵就是<strong>卷积核</strong>，又称<strong>滤波器</strong>（Filter）或者<strong>特征检测器</strong>（Feature Detector）。<br>&nbsp;&nbsp;&nbsp;&nbsp;卷积层(Convolution layer，CONV)使用卷积核执行卷积操作，这样的操作是一种线性运算（使用像素邻域的线性组合来代替这个像素），它保留了图像的空间特征，由于卷积核不变，所以不同位置的同一形状物体可以被同样识别，无需再次学习，这就是<strong>参数共享</strong>，它极大地降低了计算量。<br>&nbsp;&nbsp;&nbsp;&nbsp;对于全连接网络，每个神经元都要和前一层所有神经元保持连接，权值数巨大，而卷积核带给CNN的局部连接，让某个神经元仅需要和前一层的部分区域连接，这个区域就是“感知域”，其大小等同于卷积核的大小，这样每个神经元的连接权值大大降低。<br>&nbsp;&nbsp;&nbsp;&nbsp;那么卷积核检测出卷积特征的原因是什么呢？一般来说，相比于背景，描述物体特征的像素值差距较大，通过卷积可以过滤掉变化不明显的信息（背景）。<br>&nbsp;&nbsp;&nbsp;&nbsp;不同的卷积核有不同的作用，而且这些卷积核都属于超参数，并不是通过神经网络学习而来的，比如：同一化核、边界检测核、图像锐化核、均值模糊核（用于图像降噪）、浮雕核等等……但是这些卷积核的实质就是一个权值矩阵，用于处理单个像素和相邻元素的关系，若权值差距小，相当于取了平均值，有了模糊降噪的效果；而权值差距大，会拉大每个像素和周围的差距，达到提取边缘或者锐化的效果。  </p>
+<h5 id="卷积层的核心概念"><a href="#卷积层的核心概念" class="headerlink" title="卷积层的核心概念"></a>卷积层的核心概念</h5><p>&nbsp;&nbsp;&nbsp;&nbsp;卷积核有几个重要的参数，它们分别是：卷积核的大小、深度、步幅以及补零，其中：<br>卷积核的大小（size）通常是3<em>3或者5</em>5的方阵；<br>卷积核的深度（depth）对应的卷积核的个数，通常多个卷积核叠加效果比单个卷积核好很多；<br>步幅（stride）指的是在输入矩阵上滑动滤波矩阵的像素单元个数，若步幅为1，则卷积核每次移动1个像素位置，可以发现，步幅越大，得到的特征图会越小；<br>补零（padding zero）是因为有的场景卷积核的大小并不一定刚好被输入矩阵的维度整除，会出现无法完全覆盖边界元素的情况。因此，会有两种填充方式，一种是有效填充（valid padding），直接忽略无法计算的单元，即padding为0；第二种填充方式是等大填充（same padding），在输入矩阵的周围填充若干值，使得边界大小匹配卷积核大小，这里一般会使用0值填充。<br>补零的输出高度和宽度计算如下：<br>$$H_{out} = \lfloor \frac{H_{in}+2H_{padding}-H_{kernel}}{H_{stride}}\rfloor +1$$<br>$$W_{out} = \lfloor \frac{W_{in}+2W_{padding}-W_{kernel}}{W_{stride}}\rfloor +1$$<br>其中$H_{padding}$表示垂直维度上的补零高度，$H_{stride}$表示垂直维度上的步幅大小，$W_{padding}$表示水平维度上的补零宽度，$W_{stride}$表示水平维度上的步幅大小。<br>&nbsp;&nbsp;&nbsp;&nbsp;卷积层可以在前序隐藏层学习低阶特征，然后在下一个隐藏层中将它们组装成较高阶的特征，这就是CNN在图像识别方面效果很好的原因。  </p>
+<h4 id="激活层"><a href="#激活层" class="headerlink" title="激活层"></a>激活层</h4><p>&nbsp;&nbsp;&nbsp;&nbsp;其作用在于将前一层的线性输出，通过非线性激活函数进行处理，用以模拟任何函数，从而增强网络表征能力，在CNN里面，通常使用ReLU作为激活函数，主要原因是其收敛快，而且在一定程度上解决了梯度消失问题。<br>&nbsp;&nbsp;&nbsp;&nbsp;前面的卷积层都是线性的变换，而线性的组合依然是线性的，会极大降低网络的表达能力，因为无论多少层网络线性叠加都会降到一层神经元网络。而非线性激活函数的加入，让CNN有了分层的非线性学习能力。  </p>
+<h5 id="ReLu的简介"><a href="#ReLu的简介" class="headerlink" title="ReLu的简介"></a>ReLu的简介</h5><p>&nbsp;&nbsp;&nbsp;&nbsp;Sigmoid之类的激活函数，有一个很大的缺点，就是导数值很小，范围仅为[0,1/4]。这样当输入x很大或者很小时，其导数都趋近于0，很容易出现梯度消失现象，而Relu相比Sigmoid有三个优点：<br>（1）单侧抑制：当输入小于0时，神经元抑制，反之，神经元激活。激活函数相对简单，求导方便；<br>（2）相对宽阔的兴奋边界：和Sigmoid仅存于中间的激活态比起来，ReLU只要输入大于0，就一直处于激活态；<br>（3）稀疏激活性：Sigmoid把抑制态神经元设置的值非常小，但是后续仍然会参加计算，带来很大的计算压力，ReLU直接将抑制态神经元设置为0，不参与后续计算，从而减少了网络计算了，一定程度上环节梯度消失问题和过拟合问题。<br>&nbsp;&nbsp;&nbsp;&nbsp;但是，ReLU的简单粗暴带来了一些副作用，当x大于0时，可能会有一个非常大的梯度经过，导致计算值溢出变为负，这时ReLU的输出永远为0，无法更新，导致dying ReLU发生。这种情况多发于学习率很大的情况，当然，后续也有很多改进，如Leaky ReLU等……缓解了一部分问题。  </p>
+<h4 id="池化层"><a href="#池化层" class="headerlink" title="池化层"></a>池化层</h4><p>&nbsp;&nbsp;&nbsp;&nbsp;池化层(Pooling layer，POOL)，又称为子采样层或下采样层(Subsampling Layer)。它具有一定的空间不变性，还可以降低数据规模，从而增强CNN的泛化处理能力。<br>&nbsp;&nbsp;&nbsp;&nbsp;通常来说，当卷积层提取目标的某个特征之后，都要在两个相邻卷积层之间添加一个池化层，其目的在于（1）减少下一层要处理的数据量；（2）减少参数数量，防止过拟合。<br>&nbsp;&nbsp;&nbsp;&nbsp;最大池化和平均池化是分别取最大值和平均值的特殊池化类型。其目的不在于提升图像的清晰度，而在于突出实体特征。  </p>
+<h4 id="全连接层"><a href="#全连接层" class="headerlink" title="全连接层"></a>全连接层</h4><p>&nbsp;&nbsp;&nbsp;&nbsp;亦称为平坦层（Flatten Layer），这个网络层相当于多层感知机，在CNN里面起到分类器的作用，通过前面卷积到池化层的反复处理，数据特征有了很大增强，并且输入数据的维度也下降到了可以用全连接网络处理的程度，因此输出的分类结果要好很多。  </p>
+<h3 id="CNN架构"><a href="#CNN架构" class="headerlink" title="CNN架构"></a>CNN架构</h3><h4 id="LeNet"><a href="#LeNet" class="headerlink" title="LeNet"></a>LeNet</h4><h4 id="AlexNet"><a href="#AlexNet" class="headerlink" title="AlexNet"></a>AlexNet</h4><p>&nbsp;&nbsp;&nbsp;&nbsp;其创新在于：<br>（1）应用了ReLU激活函数；<br>（2）成功使用了Dropout机制；<br>（3）使用了最大池化，避免平均池化带来的模糊化效果，同时降低步长，丰富了特征提取的多样性；<br>（4）提出局部响应归一化层，限制ReLU的范围，提高了学习率和分类准确率；<br>（5）使用GPU加速；<br>（6）使用数据增强技术：包括水平/竖直翻转，随机裁剪等内容，增强数据量，避免过拟合。</p>
+<h4 id="GoogLeNet"><a href="#GoogLeNet" class="headerlink" title="GoogLeNet"></a>GoogLeNet</h4><h4 id="ResNet"><a href="#ResNet" class="headerlink" title="ResNet"></a>ResNet</h4>
       
     </div>
 
@@ -631,7 +649,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#网络结构"><span class="nav-number">1.</span> <span class="nav-text">网络结构</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#卷积层"><span class="nav-number">1.1.</span> <span class="nav-text">卷积层</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#池化层"><span class="nav-number">1.2.</span> <span class="nav-text">池化层</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#CNN架构"><span class="nav-number">2.</span> <span class="nav-text">CNN架构</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#LeNet"><span class="nav-number">2.1.</span> <span class="nav-text">LeNet</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#AlexNet"><span class="nav-number">2.2.</span> <span class="nav-text">AlexNet</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#GoogLeNet"><span class="nav-number">2.3.</span> <span class="nav-text">GoogLeNet</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#ResNet"><span class="nav-number">2.4.</span> <span class="nav-text">ResNet</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#网络结构"><span class="nav-number">1.</span> <span class="nav-text">网络结构</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#卷积层"><span class="nav-number">1.1.</span> <span class="nav-text">卷积层</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#卷积核"><span class="nav-number">1.1.1.</span> <span class="nav-text">卷积核</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#卷积层的核心概念"><span class="nav-number">1.1.2.</span> <span class="nav-text">卷积层的核心概念</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#激活层"><span class="nav-number">1.2.</span> <span class="nav-text">激活层</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#ReLu的简介"><span class="nav-number">1.2.1.</span> <span class="nav-text">ReLu的简介</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#池化层"><span class="nav-number">1.3.</span> <span class="nav-text">池化层</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#全连接层"><span class="nav-number">1.4.</span> <span class="nav-text">全连接层</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#CNN架构"><span class="nav-number">2.</span> <span class="nav-text">CNN架构</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#LeNet"><span class="nav-number">2.1.</span> <span class="nav-text">LeNet</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#AlexNet"><span class="nav-number">2.2.</span> <span class="nav-text">AlexNet</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#GoogLeNet"><span class="nav-number">2.3.</span> <span class="nav-text">GoogLeNet</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#ResNet"><span class="nav-number">2.4.</span> <span class="nav-text">ResNet</span></a></li></ol></li></ol></div>
             
 
           </div>
