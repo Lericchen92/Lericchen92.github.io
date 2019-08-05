@@ -110,21 +110,25 @@
 <meta name="keywords" content="深度学习">
 <meta property="og:type" content="article">
 <meta property="og:title" content="深度学习复习计划2 - 循环神经网络">
-<meta property="og:url" content="http://whatsmore.info/2019/06/15/度学习复习计划2-循环神经网络/index.html">
+<meta property="og:url" content="http://whatsmore.info/2019/06/15/深度学习复习计划2-循环神经网络/index.html">
 <meta property="og:site_name" content="除此之外">
 <meta property="og:description" content="&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;循环神经网络(Recurrent Neural Network，RNN)是一种可以分析时间序列数据，并以此预测未来的网络。一般来说，它们可以工作在任意长度的序列中，常应用于自然语言处理系统，在这里会介绍RNN基本概念，以及对LSTM和GRU的简介。">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-08-02T00:37:56.290Z">
+<meta property="og:image" content="http://whatsmore.info/2019/06/15/深度学习复习计划2-循环神经网络/1-1.jpg">
+<meta property="og:image" content="http://whatsmore.info/2019/06/15/深度学习复习计划2-循环神经网络/1-2.jpg">
+<meta property="og:image" content="http://whatsmore.info/2019/06/15/深度学习复习计划2-循环神经网络/1-3.jpg">
+<meta property="og:updated_time" content="2019-08-05T06:51:00.882Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="深度学习复习计划2 - 循环神经网络">
 <meta name="twitter:description" content="&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;循环神经网络(Recurrent Neural Network，RNN)是一种可以分析时间序列数据，并以此预测未来的网络。一般来说，它们可以工作在任意长度的序列中，常应用于自然语言处理系统，在这里会介绍RNN基本概念，以及对LSTM和GRU的简介。">
+<meta name="twitter:image" content="http://whatsmore.info/2019/06/15/深度学习复习计划2-循环神经网络/1-1.jpg">
 
 
 
 
 
 
-  <link rel="canonical" href="http://whatsmore.info/2019/06/15/度学习复习计划2-循环神经网络/">
+  <link rel="canonical" href="http://whatsmore.info/2019/06/15/深度学习复习计划2-循环神经网络/">
 
 
 
@@ -304,7 +308,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://whatsmore.info/2019/06/15/度学习复习计划2-循环神经网络/">
+    <link itemprop="mainEntityOfPage" href="http://whatsmore.info/2019/06/15/深度学习复习计划2-循环神经网络/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Shadowlight">
@@ -363,7 +367,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2019-08-02 08:37:56" itemprop="dateModified" datetime="2019-08-02T08:37:56+08:00">2019-08-02</time>
+                <time title="修改时间：2019-08-05 14:51:00" itemprop="dateModified" datetime="2019-08-05T14:51:00+08:00">2019-08-05</time>
               
             
           </span>
@@ -377,8 +381,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2019/06/15/度学习复习计划2-循环神经网络/#comments" itemprop="discussionUrl">
-                  <span class="post-meta-item-text">评论数：</span> <span class="post-comments-count valine-comment-count" data-xid="/2019/06/15/度学习复习计划2-循环神经网络/" itemprop="commentCount"></span>
+                <a href="/2019/06/15/深度学习复习计划2-循环神经网络/#comments" itemprop="discussionUrl">
+                  <span class="post-meta-item-text">评论数：</span> <span class="post-comments-count valine-comment-count" data-xid="/2019/06/15/深度学习复习计划2-循环神经网络/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -386,7 +390,7 @@
 
           
           
-             <span id="/2019/06/15/度学习复习计划2-循环神经网络/" class="leancloud_visitors" data-flag-title="深度学习复习计划2 - 循环神经网络">
+             <span id="/2019/06/15/深度学习复习计划2-循环神经网络/" class="leancloud_visitors" data-flag-title="深度学习复习计划2 - 循环神经网络">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -419,10 +423,16 @@
       
         <p>&nbsp;&nbsp;&nbsp;&nbsp;循环神经网络(Recurrent Neural Network，RNN)是一种可以分析时间序列数据，并以此预测未来的网络。一般来说，它们可以工作在任意长度的序列中，常应用于自然语言处理系统，在这里会介绍RNN基本概念，以及对LSTM和GRU的简介。  </p>
 <a id="more"></a>
-<h3 id="网络结构"><a href="#网络结构" class="headerlink" title="网络结构"></a>网络结构</h3><p>&nbsp;&nbsp;&nbsp;&nbsp;循环神经网络有很多不同的拓扑结构，从输入输出是否为固定长度来区分，可以分为5类：<br>（1）one vs one(一对一)：单输入单输出，一般用于分类；<br>（2）one to many(一对多)：输入定长，输出变长，多用于字典模式；<br>（3）many to one(多对一)：输入变长，输出定长，多用于情感分析；<br>（4）many to many(多对多，异步)：编码器-解码器结构，应用于机器翻译等；<br>（5）many to many(多对多，同步)：多用于文本序列标注。  </p>
-<h4 id="RNN训练方式"><a href="#RNN训练方式" class="headerlink" title="RNN训练方式"></a>RNN训练方式</h4><p>&nbsp;&nbsp;&nbsp;&nbsp;RNN的训练算法是时间反向传播（BackPropagation Through Time，BPTT），其算法包括三个步骤：<br>（1）隐含层建模<br>&nbsp;&nbsp;&nbsp;&nbsp;RNN及其变种，变动范围都集中在隐含层设计，那么要调整网络的权值参数，需要构建损失函数，但是构建损失函数的前提是确定损失函数的形式。问题建模的首要任务就是分别确定隐含层和输出层的输出函数。<br>&nbsp;&nbsp;&nbsp;&nbsp;假设隐含层的激活函数是Sigmoid，那么在任意t时间步，隐含层的输出$s^(t)$可以表示为：<br>$$s^(t)=<br>\begin{cases}<br>0&amp; \text{t=-1}\\<br>sigmoid(U^T\times x^{(t)}+W^T\times s^{(t-1)} + b)&amp; \text{其他情况}<br>\end{cases}$$<br>其中U和W是网络中两类权值矩阵，在t时间步的输出层$o^{(t)}$可表示为公式:<br>$$o^{(t)}=V^T\times s^{(t)}+c$$<br>上面各式的b和c，都是神经元的偏置参数向量。经过Softmax函数处理后，最终输出$y^{(t)}$可用下式表示：<br>$$y^{(t)}=softmax(o^{(t)})=softmax(V^T \times s^{(t)}+c)$$<br>（2）确定优化目标函数<br>&nbsp;&nbsp;&nbsp;&nbsp;做出模型之后，就需要构建损失函数，并求其最小值，形成优化函数$J(\theta)$，这里使用交叉熵计算：<br>$$min J(\theta)=\sum_{t=1}^Tloss(\hat{y}^{(t)},y^{(t)})$$</p>
-<p>与前馈神经网络的区别主要就在于RNN具有反向连接，一个最简单的RNN仅由一个神经元组成，它自己接收输入，产生输出，然后将输出返回去本身。在每一个时间$t$，这个循环神经元接收输入$x(t)$和上一个时间它自己的输出$y_(t-1)$。  </p>
-<h3 id="LSTM单元"><a href="#LSTM单元" class="headerlink" title="LSTM单元"></a>LSTM单元</h3><h3 id="GRU单元"><a href="#GRU单元" class="headerlink" title="GRU单元"></a>GRU单元</h3>
+<h3 id="网络结构"><a href="#网络结构" class="headerlink" title="网络结构"></a>网络结构</h3><p>&nbsp;&nbsp;&nbsp;&nbsp;RNN网络模型展开示意图如下所示：<br><img src="/2019/06/15/深度学习复习计划2-循环神经网络/1-1.jpg" alt="图片1-1"><br>其中左边的黑色方块表示延迟连接，即从上一个时刻的隐含状态$s^{(t-1)}$到当前时刻隐含层状态$s^{(t)}$之间的连接。<br>&nbsp;&nbsp;&nbsp;&nbsp;由图可知，X向量表示输入层，向量O表示输出层。若输入层神经元个数为n，隐含层神经元个数为m，输出层神经元个数为r，那么U表示输入层到隐含层的权重矩阵，维数是$n\times m$；V表示隐含层到输出层的权重矩阵，维数是$m \times r$；W表示隐含层上一次的输出值，大小为$m \times m$。<br>&nbsp;&nbsp;&nbsp;&nbsp;理论上RNN可以扩展到无限长的序列，但实际并非如此，对于函数$f^{(t)}$经过t步后展开的循环，如下所示：<br>$$s^{(t)}=f^{(t)}(x^{(t)},x^{(t-1)},…,x^{(2)},x^{(1)})=\begin{cases}<br>0&amp; \text{t=-1}\\<br>\sigma(s^{(t-1)},x^{(t)};\theta)&amp; \text{x \geq 0}<br>\end{cases}$$<br>&nbsp;&nbsp;&nbsp;&nbsp;函数$f^{(t)}$将过去到现在的所以有序列X作为输入，生成当前的状态。其中$\sigma$表示激活函数，$\theta$表示激活函数中所有涉及的参数集合，$x^{(t)}$表示序列第t时间的输入数据，$s^{(t)}$表示隐含层的值。<br>&nbsp;&nbsp;&nbsp;&nbsp;激活函数可以是传统的Sigmoid，tanh等，也可以是ReLU等内容，一般来说，还需要设置初始隐含层$s^{(-1)}$,表示初始的“记忆状态”，需要将其置为0。<br>&nbsp;&nbsp;&nbsp;&nbsp;循环神经网络有很多不同的拓扑结构，从输入输出是否为固定长度来区分，可以分为5类：<br>（1）one vs one(一对一)：单输入单输出，一般用于分类；<br>（2）one to many(一对多)：输入定长，输出变长，多用于字典模式；<br>（3）many to one(多对一)：输入变长，输出定长，多用于情感分析；<br>（4）many to many(多对多，异步)：编码器-解码器结构，应用于机器翻译等；<br>（5）many to many(多对多，同步)：多用于文本序列标注。  </p>
+<h4 id="RNN训练方式"><a href="#RNN训练方式" class="headerlink" title="RNN训练方式"></a>RNN训练方式</h4><p>&nbsp;&nbsp;&nbsp;&nbsp;RNN的训练算法是时间反向传播（BackPropagation Through Time，BPTT），其算法包括三个步骤：<br>（1）隐含层建模<br>&nbsp;&nbsp;&nbsp;&nbsp;RNN及其变种，变动范围都集中在隐含层设计，那么要调整网络的权值参数，需要构建损失函数，但是构建损失函数的前提是确定损失函数的形式。问题建模的首要任务就是分别确定隐含层和输出层的输出函数。<br>&nbsp;&nbsp;&nbsp;&nbsp;假设隐含层的激活函数是Sigmoid，那么在任意t时间步，隐含层的输出$s^(t)$可以表示为：<br>$$s^(t)=<br>\begin{cases}<br>0&amp; \text{t=-1}\\<br>sigmoid(U^T\times x^{(t)}+W^T\times s^{(t-1)} + b)&amp; \text{其他情况}<br>\end{cases}$$<br>其中U和W是网络中两类权值矩阵，在t时间步的输出层$o^{(t)}$可表示为公式:<br>$$o^{(t)}=V^T\times s^{(t)}+c$$<br>上面各式的b和c，都是神经元的偏置参数向量。经过Softmax函数处理后，最终输出$y^{(t)}$可用下式表示：<br>$$y^{(t)}=softmax(o^{(t)})=softmax(V^T \times s^{(t)}+c)$$<br>（2）确定优化目标函数<br>&nbsp;&nbsp;&nbsp;&nbsp;做出模型之后，就需要构建损失函数，并求其最小值，形成优化函数$J(\theta)$，这里使用交叉熵计算：<br>$$min J(\theta)=\sum_{t=1}^Tloss(\hat{y}^{(t)},y^{(t)})=\sum_{t=1}^T(-[\sum_{j=1}^my^{(t)}(j)log(\hat{y^{(t)}}(j))+(1-y^{(t)}(j))log(1-\hat{y^{(t)}})])$$<br>其中$\hat{y^{(t)}}$为预期输出向量，$y^{(t)}$是实际输出向量，$y^{(t)}(j)$表示预测值为j的概率，参数$\theta$表示激活函数的所有参数集合$[U,V,W;b,c]。$<br>（3）参数求解<br>&nbsp;&nbsp;&nbsp;&nbsp;BPTT也是求参数的导数，并使用梯度下降等方式指导参数更新，但是BPTT的参数有5类，分别求：$$[\frac{\partial J(\theta)}{\partial V},\frac{\partial J(\theta)}{\partial c},\frac{\partial J(\theta)}{\partial W},\frac{\partial J(\theta)}{\partial U},\frac{\partial J(\theta)}{\partial b}]$$<br>&nbsp;&nbsp;&nbsp;&nbsp;但是由于RNN采用Sigmoid激活函数，倒数值域在$[0,\frac{1}{4}]$之间，因此，每一层反向传播，梯度都会以前一层$\frac{1}{4}$的速度递减，直至梯度消失（趋于0）。<br>&nbsp;&nbsp;&nbsp;&nbsp;若梯度消失，参数调整就没有了方向，BPTT无法找到最优解，RNN的应用就受到了限制。  </p>
+<h3 id="LSTM"><a href="#LSTM" class="headerlink" title="LSTM"></a>LSTM</h3><p>&nbsp;&nbsp;&nbsp;&nbsp;前面提到，RNN随着网络的层数增多或者时间流逝，会出现梯度消失（梯度较小，多层迭代后趋于0）或者梯度爆炸现象（梯度较大，多层迭代后梯度特别大）。梯度爆炸可以通过强制截断来消解，而LSTM可以通过巧妙地设计，缓解梯度消失问题。<br>&nbsp;&nbsp;&nbsp;&nbsp;原始RNN隐含层中的神经元只有一个状态，记为h，它对短期输入非常敏感，神经元功能不健全，把该记住的遗忘了，把该遗忘的记住了。LSTM的核心本质在于，引入可控自循环，让梯度得以长时间可持续流动。<br>&nbsp;&nbsp;&nbsp;&nbsp;首先，在原有的神经元基础上加一个状态c，让其保存长期状态，称之为“单元记忆状态”，以取代传统的隐含层神经元节点。它负责把记忆信息由序列的初始位置传递到序列的末端。<br><img src="/2019/06/15/深度学习复习计划2-循环神经网络/1-2.jpg" alt="图片1-2"><br>&nbsp;&nbsp;&nbsp;&nbsp;在LSTM结构上，在t时刻当前神经元的输入有3个：当前时刻输入值$x_t$，前一时刻输出值$s_{t-1}$和前一时刻的记忆单元状态$c_{t-1}$；输出有2个：当前LSTM的输出值$s_t$和当前时刻的记忆单元状态$c_t$。<br>&nbsp;&nbsp;&nbsp;&nbsp;那么如何有效控制这个长期状态c呢？LSTM的设计思路是，设计3个控制单元，打造成一个可控记忆神经元，如下图所示：<br><img src="/2019/06/15/深度学习复习计划2-循环神经网络/1-3.jpg" alt="图片1-3"><br>&nbsp;&nbsp;&nbsp;&nbsp;第一个门开关，负责决定把前一个长期记忆$c_{t-1}$在多大程度上保留到$c_t$中，它可选择性的记忆部分之前积累的信息；第二个门开关，负责控制以多大程度把当前时刻的状态$c^{’}_{t}$存入长期记忆状态$c_t$；第三个门开关，负责控制是否把长期状态$c_t$作为当前LSTM的输出。   </p>
+<h4 id="LSTM单元"><a href="#LSTM单元" class="headerlink" title="LSTM单元"></a>LSTM单元</h4><p>&nbsp;&nbsp;&nbsp;&nbsp;假设x表示输入向量，W是门的权重向量，b的偏置向量，那么可以用公式$g(x)=\sigma(W\times x+b)$表示。<br>&nbsp;&nbsp;&nbsp;&nbsp;在这里，激活函数$\sigma$可用Sigmoid函数的输出来控制门的开和关，由于Sigmoid输出值域在0-1之间，可以控制信息的留存程度。<br>&nbsp;&nbsp;&nbsp;&nbsp;类似的，LSTM设计了两个门来控制记忆单元状态c的信息量：一个是遗忘门（forget gate），它决定了上一时刻单元状态保留多少到当前时刻；另一个是输入门（input gate），它决定了当前时刻的输入，有多少可以保存到当前单元状态c中。<br>&nbsp;&nbsp;&nbsp;&nbsp;为了表述方便，很多资料添加了候选门（candidate gate），它控制着以多大比例将历史信息和当前信息融合。最后，LSTM还有一个输出门（output gate）,控制单元状态有多少信息输出。  </p>
+<h5 id="遗忘门"><a href="#遗忘门" class="headerlink" title="遗忘门"></a>遗忘门</h5><p>&nbsp;&nbsp;&nbsp;&nbsp;遗忘门的目的在于保存多少过去的记忆，可以通过激活函数实现：<br>$$f_t=\sigma(W^T_f\times s_{t-1}+U^T_f \times x_t + b_f)$$<br>&nbsp;&nbsp;&nbsp;&nbsp;其中，$\sigma$表示激活函数，通常为Sigmoid；$W^T_f$表示遗忘门权重矩阵，$U^T_f$是遗忘门输入层与隐含层之间的权重矩阵，$b_f$表示遗忘门的偏置，下标f表示遗忘门。<br>&nbsp;&nbsp;&nbsp;&nbsp;可见，遗忘门是通过将前一隐含层的输出$s_{t-1}$与当前的输入$x_t$进行线性组合，然后利用激活函数，将其输出值压缩到0到1的区间之内，输出值越靠近1，表明记忆块保留的信息越多，反之，越靠近0，表明保留的信息越少。  </p>
+<h5 id="输入门"><a href="#输入门" class="headerlink" title="输入门"></a>输入门</h5><p>&nbsp;&nbsp;&nbsp;&nbsp;输入门的作用在于，它决定了当前时刻的输入信息$x_t$以多大程度添加至记忆信息流中，它的计算公式几乎和遗忘门完全一致，激活函数$\sigma$也是用sigmoid：<br>$$i_t=\sigma(W^T_f\times s_{t-1}+U^T_i \times x_t + b_i)$$</p>
+<h5 id="候选门"><a href="#候选门" class="headerlink" title="候选门"></a>候选门</h5><p>&nbsp;&nbsp;&nbsp;&nbsp;候选门负责融合当前输入的信息和过去记忆的信息，也就是计算当前输入的单元状态$C^{’}_{t}$，公式如下：<br>$$C^{’}_{t}=tanh(W^T_c\times s_{t-1}+U^T_c\times x_t+b_c)$$<br>&nbsp;&nbsp;&nbsp;&nbsp;在这里，激活函数换成tanh，可以将输出值归整至-1和1之间。<br>&nbsp;&nbsp;&nbsp;&nbsp;接下来，需要将记忆块的状态从$C_{t-1}$更新到$C_t$。记忆的更新由两部分组成：（1）通过遗忘门过滤掉不想<br>保留的记忆，记作:$f_t \times C_{t-1}$;(2)添加当前新增的消息，集做：$i_t \times C^{’}_{t}$，然后将这两部分线性组合，得到更新好的记忆信息$C^t$:<br>$$C_t=f_t \times C_{t-1} + i_t \times C^{’}_{t}$$<br>&nbsp;&nbsp;&nbsp;&nbsp;由于遗忘门的存在，它可以控制保留多久之前的记忆；由于输入门的存在，它可以避免当前无关紧要的内容留在记忆中。  </p>
+<h5 id="输出门"><a href="#输出门" class="headerlink" title="输出门"></a>输出门</h5><p>&nbsp;&nbsp;&nbsp;&nbsp;输出门可以控制多少记忆可以用于在下一层网络的更新中。其计算方式表示为：<br>$$O_t=\sigma(W^T_o \times s_{t-1} + U^T_o \times x_t + b_o)$$<br>&nbsp;&nbsp;&nbsp;&nbsp;这里的激活函数仍然使用Sigmoid，但是为了确保输出范围，最后还要使用tanh将记忆值变换至-1和+1的区间，负值表示不能输出，正值表示合理输出。最终的输出公式为：<br>$$s_t=O_t\times tanh(C_t)$$<br>&nbsp;&nbsp;&nbsp;&nbsp;从总体来看，LSTM的加法帮助其在反向传播时，维持恒定误差，保留信号，减缓梯度消失；而0-1之间的乘法可以控制信息的留存比例，这些都是LSTM单元的精华。  </p>
+<h4 id="GRU单元"><a href="#GRU单元" class="headerlink" title="GRU单元"></a>GRU单元</h4><p>&nbsp;&nbsp;&nbsp;&nbsp;GRU在LSTM上面进行了简化，主要有以下两点：（1）提出了更新门的概念，也就是将输入门和遗忘门结合，形成新的更新门；（2）将记忆单元$c_t$和隐含层单元$s_t$实施了融合。  </p>
+
       
     </div>
 
@@ -650,7 +660,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#网络结构"><span class="nav-number">1.</span> <span class="nav-text">网络结构</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#RNN训练方式"><span class="nav-number">1.1.</span> <span class="nav-text">RNN训练方式</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#LSTM单元"><span class="nav-number">2.</span> <span class="nav-text">LSTM单元</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#GRU单元"><span class="nav-number">3.</span> <span class="nav-text">GRU单元</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#网络结构"><span class="nav-number">1.</span> <span class="nav-text">网络结构</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#RNN训练方式"><span class="nav-number">1.1.</span> <span class="nav-text">RNN训练方式</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#LSTM"><span class="nav-number">2.</span> <span class="nav-text">LSTM</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#LSTM单元"><span class="nav-number">2.1.</span> <span class="nav-text">LSTM单元</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#遗忘门"><span class="nav-number">2.1.1.</span> <span class="nav-text">遗忘门</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#输入门"><span class="nav-number">2.1.2.</span> <span class="nav-text">输入门</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#候选门"><span class="nav-number">2.1.3.</span> <span class="nav-text">候选门</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#输出门"><span class="nav-number">2.1.4.</span> <span class="nav-text">输出门</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#GRU单元"><span class="nav-number">2.2.</span> <span class="nav-text">GRU单元</span></a></li></ol></li></ol></div>
             
 
           </div>
