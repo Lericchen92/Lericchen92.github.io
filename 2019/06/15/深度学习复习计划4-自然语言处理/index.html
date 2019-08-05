@@ -114,7 +114,7 @@
 <meta property="og:site_name" content="除此之外">
 <meta property="og:description" content="&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;自然语言处理关注计算机与人类之间的自然语言交互，在这一部分将会介绍词和词的表示、编码器-解码器模型、集束搜索以及注意力机制。">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-06-15T07:45:22.100Z">
+<meta property="og:updated_time" content="2019-08-05T11:45:14.057Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="深度学习复习计划4 - 自然语言处理">
 <meta name="twitter:description" content="&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;自然语言处理关注计算机与人类之间的自然语言交互，在这一部分将会介绍词和词的表示、编码器-解码器模型、集束搜索以及注意力机制。">
@@ -346,12 +346,24 @@
                 
               
 
-              <time title="创建时间：2019-06-15 14:43:00 / 修改时间：15:45:22" itemprop="dateCreated datePublished" datetime="2019-06-15T14:43:00+08:00">2019-06-15</time>
+              <time title="创建时间：2019-06-15 14:43:00" itemprop="dateCreated datePublished" datetime="2019-06-15T14:43:00+08:00">2019-06-15</time>
             
 
             
               
 
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2019-08-05 19:45:14" itemprop="dateModified" datetime="2019-08-05T19:45:14+08:00">2019-08-05</time>
               
             
           </span>
@@ -425,7 +437,18 @@
       
         <p>&nbsp;&nbsp;&nbsp;&nbsp;自然语言处理关注计算机与人类之间的自然语言交互，在这一部分将会介绍词和词的表示、编码器-解码器模型、集束搜索以及注意力机制。</p>
 <a id="more"></a>
-<h3 id="词汇表征方法"><a href="#词汇表征方法" class="headerlink" title="词汇表征方法"></a>词汇表征方法</h3><h4 id="n-gram"><a href="#n-gram" class="headerlink" title="n-gram"></a>n-gram</h4><h4 id="词嵌入"><a href="#词嵌入" class="headerlink" title="词嵌入"></a>词嵌入</h4><h3 id="编码器-解码器模型"><a href="#编码器-解码器模型" class="headerlink" title="编码器-解码器模型"></a>编码器-解码器模型</h3><h4 id="beam-search"><a href="#beam-search" class="headerlink" title="beam search"></a>beam search</h4><h3 id="注意力机制"><a href="#注意力机制" class="headerlink" title="注意力机制"></a>注意力机制</h3><h4 id="transformer"><a href="#transformer" class="headerlink" title="transformer"></a>transformer</h4><h3 id="情感分析（textrcnn）"><a href="#情感分析（textrcnn）" class="headerlink" title="情感分析（textrcnn）"></a>情感分析（textrcnn）</h3><h3 id="机器翻译"><a href="#机器翻译" class="headerlink" title="机器翻译"></a>机器翻译</h3>
+<h3 id="词汇表征方法"><a href="#词汇表征方法" class="headerlink" title="词汇表征方法"></a>词汇表征方法</h3><p>&nbsp;&nbsp;&nbsp;&nbsp;在自然语言处理领域，词的表达通常有3种方式：（1）独热编码；（2）分布式表示；（3）词嵌入表示。  </p>
+<h4 id="独热编码"><a href="#独热编码" class="headerlink" title="独热编码"></a>独热编码</h4><p>&nbsp;&nbsp;&nbsp;&nbsp;独热编码，就是在编码方式上，每个单词都有独特的1，其他都为0。假设单词a，在词汇表排在第一位，可以用向量[1,0,0…..,0]表示。<br>&nbsp;&nbsp;&nbsp;&nbsp;可见，在词的向量空间上，每个向量只有一个1和非常多的0，数据显得非常稀疏，并且每个词只有一个维度，在词数激增之后，会带来严重的维度灾难问题；同时每个向量之间都是正交的，缺失相似性的度量，对于NLP问题，这是最严重的缺陷。  </p>
+<h4 id="分布式表示"><a href="#分布式表示" class="headerlink" title="分布式表示"></a>分布式表示</h4><p>&nbsp;&nbsp;&nbsp;&nbsp;针对独热编码的不足，设计使用连续的低维度向量来表示词的特征，可以直接刻画词之间的相似度，并构建从向量到概率的分布函数模型，使得相似的词向量可以映射到相近的概率空间上，这个向量就是词的“分布式表示”（Distributed Representation）。<br>&nbsp;&nbsp;&nbsp;&nbsp;这里的分布式指的是，每个词都可以用一个向量表达，而向量包含多个特征，维度在50-100之间。它提供了一种可能性，让相似的词在距离上可度量，如欧氏距离或者余弦距离等。  </p>
+<h4 id="词嵌入"><a href="#词嵌入" class="headerlink" title="词嵌入"></a>词嵌入</h4><p>&nbsp;&nbsp;&nbsp;&nbsp;在自然语言处理中，“词嵌入”是语言模型与表征学习技术的统称，它指的是把一个维数等于所有词数量的高维空间（如独热编码）嵌入到维数更少的连续向量空间中，使得每个词都被映射为实数域上的向量。<br>&nbsp;&nbsp;&nbsp;&nbsp;其中的嵌入表示：（1）单射，即每个Y只有唯一的X与之对应，反之亦然；（2）结构保存，即X空间的关系映射到Y空间，关系仍然保存。<br>&nbsp;&nbsp;&nbsp;&nbsp;现有的向量空间模型可分为两类，一类是计数模型，如潜在语义分析（Latent Semantic Analysis，LSA），通过分析语义，发现文档中潜在的含义和概念，LSA将文档看作词袋，只统计某个词出现的概率，这些概率会被转换为小而密集的矩阵；另一类是预测模型，如神经概率语言模型（Neural Probabilistic Model），利用神经网络，根据某个词周围的词，来推测这个词及其向量空间。  </p>
+<h3 id="NLP的统计模型"><a href="#NLP的统计模型" class="headerlink" title="NLP的统计模型"></a>NLP的统计模型</h3><p>&nbsp;&nbsp;&nbsp;&nbsp;NLP的统计语言模型有三个发展阶段：NGram语言模型、前馈神经网络模型（NNLM）和循环神经网络模型（RNNLM）。  </p>
+<h4 id="n-gram"><a href="#n-gram" class="headerlink" title="n-gram"></a>n-gram</h4><p>&nbsp;&nbsp;&nbsp;&nbsp;假设S表示某一个有意义的句子，这个句子由一系列特定顺序的单词构成，即$S=w_1,w_2,…,w_T$。现在想知道S在文本中出现的概率，记作$P(S)$：<br>$$<br>\begin{align}<br>P(S) &amp;= P(w_1,w_2,…,w_T)  \\<br> &amp;= P(w_1)P(w_2|w_1)P(w_3|w_2w_1)…P(w_t|w_1,w_2,…,w_{t-1})    \\<br> &amp;= \prod_{t=1}^Tp(w_t|w_1,w_2,…,w_{t-1})    \\<br>\end{align}<br>$$<br>&nbsp;&nbsp;&nbsp;&nbsp;其中，$P(w_1)$表示第一个词$w_1$出现的概率，$P(w_2|w_1)$表示已知第一个词的前提下，第二个词出现的概率。因此可知，单词序列的联合概率可以转换为一系列条件概率的乘积，也就等价于在给定t-1词的情况下，预测第t词出现的条件概率$p(w_t|w_1,w_2,…,w_{t-1})$。<br>&nbsp;&nbsp;&nbsp;&nbsp;但是构建的模型，参数量巨大，通常会使用Ngram模型，也称为N元模型，该模型基于马尔可夫假设，即假设在一段文本序列中，第n词出现的概率只和前面有限n-1个词相关，而与其他词无关，这里的n通常远小于t，也就是对句子做部分阶段。<br>&nbsp;&nbsp;&nbsp;&nbsp;这样计算S的概率就变成了：<br>$$P(S)=P(w_1,w_2,…,w_T) \approx P(w_t|w_1,w_2,…,w_{t-1})$$<br>&nbsp;&nbsp;&nbsp;&nbsp;常见的模型有：Bigram模型(n=2)和Trigram模型(n=3)。实验表明，四元模型更稀疏，实际效果并不会比三元模型更好。  </p>
+<h4 id="基于神经网络的语言模型"><a href="#基于神经网络的语言模型" class="headerlink" title="基于神经网络的语言模型"></a>基于神经网络的语言模型</h4><p>&nbsp;&nbsp;&nbsp;&nbsp;传统的Ngram存在较大问题，首先，参数空间太大，仅能对长度为2和3的词序列进行评估；其次，没有考虑词之间内在的联系性。<br>&nbsp;&nbsp;&nbsp;&nbsp;为了解决这种问题，NNLM通过嵌入一个线性的投影矩阵（Projection Matrix），将原始的独热编码向量映射为稠密的连续向量，并通过训练一个神经语言模型，去学习这些向量的权重。其步骤可以概括为：<br>（1）为词表中的每一个词分配一个分布式的词特征向量；<br>（2）假定一个连续平滑的概率模型，输入一段词向量序列，可以输出序列的联合概率；<br>（3）学习词向量的权重和概率模型的参数。<br>&nbsp;&nbsp;&nbsp;&nbsp;词特征向量代表词在不同维度的属性，每个词都可映射到向量空间，并且特征数量远小于词表，从而达到降维效果。</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;一个NNLM模型，可以拆分为两部分：<br>（1）线性嵌入层（Embedding Layer）<br>&nbsp;&nbsp;&nbsp;&nbsp;它将输入的独热词向量通过$V\times m$矩阵映射为n-1个分布式的词向量，其中V是词汇表大小，m是嵌入项链的维度。<br>（2）前向反馈神经网络<br>&nbsp;&nbsp;&nbsp;&nbsp;由一个激活函数为tanh的隐含层和一个softmax输出层组成，词向量经过处理，归一化为概率P，就是在$w_1,w_2,…,w_{t-1}$条件下计算$w_i$的预测条件概率$P(w_i=i|w_1,…,w_{t-1})$，然后通过最小化交叉熵损失函数调整参数（包括嵌入层向量）。<br>&nbsp;&nbsp;&nbsp;&nbsp;但NNLM也存在问题，一方面它处理的句子必须定长，因为输入层神经元是固定的；另一方面，它的全连接带来很多参数，导致训练速度较慢。  </p>
+<h4 id="基于RNN的语言模型"><a href="#基于RNN的语言模型" class="headerlink" title="基于RNN的语言模型"></a>基于RNN的语言模型</h4><p>&nbsp;&nbsp;&nbsp;&nbsp;前一节基于FNN的语言模型，其本质上仍然是Ngram为基础的，在预测第n词时，需要依赖前n-1个词的表示。而RNN可以通过记忆来消除上下文窗口限制，同时相比全连接网络，RNN的参数共享也可以减少参数规模。<br>&nbsp;&nbsp;&nbsp;&nbsp;RNNLM的输入层使用独热编码，经过一个隐含层s保存上下文状态s(t)，当前输入w(t)和历史上下文s(t-1)相结合，形成隐含层的上下文s(t)，在输出层中，输出y(t)，也就是$P(w_t|w_t,s_{(t-1)})$。<br>&nbsp;&nbsp;&nbsp;&nbsp;RNNLM也存在一些问题，如梯度消失、易过拟合等，这些都可以通过LSTM和dropout，正则化技术解决。  </p>
+<h5 id="正则化技术"><a href="#正则化技术" class="headerlink" title="正则化技术"></a>正则化技术</h5><p>&nbsp;&nbsp;&nbsp;&nbsp;正则化技术（Regularization）会修改算法，降低泛化误差，减少过拟合。<br>&nbsp;&nbsp;&nbsp;&nbsp;常用的正则化方法有：<br>（1）修改目标函数，在目标函数后添加范式（L1，L2）惩罚；<br>（2）修正输入源，使用数据增强方法；<br>（3）权值修正，权值加入噪声；<br>（4）早停；<br>（5）集成方法，如Bagging；<br>（6）对抗方法、权值共享、稀疏表示、等等方法  </p>
+<h5 id="RNN-Dropout"><a href="#RNN-Dropout" class="headerlink" title="RNN Dropout"></a>RNN Dropout</h5><p>&nbsp;&nbsp;&nbsp;&nbsp;Dropout是临时随机丢弃神经元训练的方式，可以被视为一种集成学习，应用于RNN时，需要注意，多层信息传递时可以执行Dropout，而层间信息传递不可使用。  </p>
+<h3 id="编码器-解码器模型"><a href="#编码器-解码器模型" class="headerlink" title="编码器-解码器模型"></a>编码器-解码器模型</h3><h4 id="beam-search"><a href="#beam-search" class="headerlink" title="beam search"></a>beam search</h4><h3 id="注意力机制"><a href="#注意力机制" class="headerlink" title="注意力机制"></a>注意力机制</h3><h4 id="transformer"><a href="#transformer" class="headerlink" title="transformer"></a>transformer</h4><h3 id="情感分析（textrcnn）"><a href="#情感分析（textrcnn）" class="headerlink" title="情感分析（textrcnn）"></a>情感分析（textrcnn）</h3><h3 id="机器翻译"><a href="#机器翻译" class="headerlink" title="机器翻译"></a>机器翻译</h3>
       
     </div>
 
@@ -488,8 +511,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2019/06/15/深度学习复习计划6-强化学习/" rel="prev" title="深度学习复习计划6 - 强化学习">
-                深度学习复习计划6 - 强化学习 <i class="fa fa-chevron-right"></i>
+              <a href="/2019/06/15/深度学习复习计划5-自动编码器/" rel="prev" title="深度学习复习计划5 - 自动编码器">
+                深度学习复习计划5 - 自动编码器 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -653,7 +676,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#词汇表征方法"><span class="nav-number">1.</span> <span class="nav-text">词汇表征方法</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#n-gram"><span class="nav-number">1.1.</span> <span class="nav-text">n-gram</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#词嵌入"><span class="nav-number">1.2.</span> <span class="nav-text">词嵌入</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#编码器-解码器模型"><span class="nav-number">2.</span> <span class="nav-text">编码器-解码器模型</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#beam-search"><span class="nav-number">2.1.</span> <span class="nav-text">beam search</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#注意力机制"><span class="nav-number">3.</span> <span class="nav-text">注意力机制</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#transformer"><span class="nav-number">3.1.</span> <span class="nav-text">transformer</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#情感分析（textrcnn）"><span class="nav-number">4.</span> <span class="nav-text">情感分析（textrcnn）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#机器翻译"><span class="nav-number">5.</span> <span class="nav-text">机器翻译</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#词汇表征方法"><span class="nav-number">1.</span> <span class="nav-text">词汇表征方法</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#独热编码"><span class="nav-number">1.1.</span> <span class="nav-text">独热编码</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#分布式表示"><span class="nav-number">1.2.</span> <span class="nav-text">分布式表示</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#词嵌入"><span class="nav-number">1.3.</span> <span class="nav-text">词嵌入</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#NLP的统计模型"><span class="nav-number">2.</span> <span class="nav-text">NLP的统计模型</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#n-gram"><span class="nav-number">2.1.</span> <span class="nav-text">n-gram</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#基于神经网络的语言模型"><span class="nav-number">2.2.</span> <span class="nav-text">基于神经网络的语言模型</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#基于RNN的语言模型"><span class="nav-number">2.3.</span> <span class="nav-text">基于RNN的语言模型</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#正则化技术"><span class="nav-number">2.3.1.</span> <span class="nav-text">正则化技术</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#RNN-Dropout"><span class="nav-number">2.3.2.</span> <span class="nav-text">RNN Dropout</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#编码器-解码器模型"><span class="nav-number">3.</span> <span class="nav-text">编码器-解码器模型</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#beam-search"><span class="nav-number">3.1.</span> <span class="nav-text">beam search</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#注意力机制"><span class="nav-number">4.</span> <span class="nav-text">注意力机制</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#transformer"><span class="nav-number">4.1.</span> <span class="nav-text">transformer</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#情感分析（textrcnn）"><span class="nav-number">5.</span> <span class="nav-text">情感分析（textrcnn）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#机器翻译"><span class="nav-number">6.</span> <span class="nav-text">机器翻译</span></a></li></ol></div>
             
 
           </div>
