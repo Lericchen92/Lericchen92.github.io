@@ -114,7 +114,7 @@
 <meta property="og:site_name" content="除此之外">
 <meta property="og:description" content="&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;在这一部分将会使用前面介绍过的深度神经网络来解决计算机视觉的相关问题，并介绍有助于提高模型泛化能力的方法。">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-06-15T07:36:56.336Z">
+<meta property="og:updated_time" content="2019-08-06T02:00:59.067Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="深度学习复习计划3 - 计算机视觉">
 <meta name="twitter:description" content="&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;在这一部分将会使用前面介绍过的深度神经网络来解决计算机视觉的相关问题，并介绍有助于提高模型泛化能力的方法。">
@@ -346,12 +346,24 @@
                 
               
 
-              <time title="创建时间：2019-06-15 14:42:00 / 修改时间：15:36:56" itemprop="dateCreated datePublished" datetime="2019-06-15T14:42:00+08:00">2019-06-15</time>
+              <time title="创建时间：2019-06-15 14:42:00" itemprop="dateCreated datePublished" datetime="2019-06-15T14:42:00+08:00">2019-06-15</time>
             
 
             
               
 
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2019-08-06 10:00:59" itemprop="dateModified" datetime="2019-08-06T10:00:59+08:00">2019-08-06</time>
               
             
           </span>
@@ -408,8 +420,23 @@
         <p>&nbsp;&nbsp;&nbsp;&nbsp;在这一部分将会使用前面介绍过的深度神经网络来解决计算机视觉的相关问题，并介绍有助于提高模型泛化能力的方法。</p>
 <a id="more"></a>
 <h3 id="提高模型泛化的方法"><a href="#提高模型泛化的方法" class="headerlink" title="提高模型泛化的方法"></a>提高模型泛化的方法</h3><h4 id="图像增广"><a href="#图像增广" class="headerlink" title="图像增广"></a>图像增广</h4><p>&nbsp;&nbsp;&nbsp;&nbsp;众所周知，大规模数据集是成功应用深度神经网络的前提，<strong>图像增广</strong>（image augmentation）技术通过对训练图像做一系列随机改变来产生相似但又不同的训练样本，从而扩大训练集规模，同时还可以降低模型对某些属性的依赖，从而提升模型泛化能力。<br>&nbsp;&nbsp;&nbsp;&nbsp;常用的图像增广方法有：<br>1、翻转和裁剪：左右、上下反转图像，随机裁剪图像；<br>2、变换颜色：亮度、对比对、饱和度、色调；<br>3、叠加多个图像增广方案。  </p>
-<h4 id="微调-FineTune"><a href="#微调-FineTune" class="headerlink" title="微调(FineTune)"></a>微调(FineTune)</h4><p>&nbsp;&nbsp;&nbsp;&nbsp;由于获得标注数据会花费大量时间和资金，有一种解决方法叫<strong>迁移学习</strong>（transfer learning）可以将从源数据集学到的知识迁移到目标数据集上。虽然源数据集和目标数据集图像有可能无关，但是在源数据集上训练的模型可以抽取较通用的图像特征，从而帮助识别边缘、纹理、形状等。<br>&nbsp;&nbsp;&nbsp;&nbsp;微调由以下4步组成：<br>1、在源数据集上预训练一个神经网络模型，即源模型；<br>2、创建一个新的神经网络模型，即目标模型，它复制了源模型除了输出层外所有层的模型设计和参数；<br>3、为目标模型添加一个输出大小为目标数据集类别个数的输出层，并随机初始化该层模型参数；<br>4、在目标数据集上训练目标模型，这样将从头训练输出层，而其余层的参数都是基于源模型的微调参数得到的。<br>当目标数据集远小于源数据集时，微调有助于提升模型泛化能力。</p>
-<h3 id="目标检测和边界框"><a href="#目标检测和边界框" class="headerlink" title="目标检测和边界框"></a>目标检测和边界框</h3><h3 id="锚框"><a href="#锚框" class="headerlink" title="锚框"></a>锚框</h3><h3 id="多尺度目标检测"><a href="#多尺度目标检测" class="headerlink" title="多尺度目标检测"></a>多尺度目标检测</h3><h3 id="单发多框检测"><a href="#单发多框检测" class="headerlink" title="单发多框检测"></a>单发多框检测</h3><h3 id="区域卷积神经网络系列"><a href="#区域卷积神经网络系列" class="headerlink" title="区域卷积神经网络系列"></a>区域卷积神经网络系列</h3><h3 id="语义分割"><a href="#语义分割" class="headerlink" title="语义分割"></a>语义分割</h3><h3 id="全卷积网络"><a href="#全卷积网络" class="headerlink" title="全卷积网络"></a>全卷积网络</h3><h3 id="样式迁移"><a href="#样式迁移" class="headerlink" title="样式迁移"></a>样式迁移</h3>
+<h4 id="微调-FineTune"><a href="#微调-FineTune" class="headerlink" title="微调(FineTune)"></a>微调(FineTune)</h4><p>&nbsp;&nbsp;&nbsp;&nbsp;由于获得标注数据会花费大量时间和资金，有一种解决方法叫<strong>迁移学习</strong>（transfer learning）可以将从源数据集学到的知识迁移到目标数据集上。虽然源数据集和目标数据集图像有可能无关，但是在源数据集上训练的模型可以抽取较通用的图像特征，从而帮助识别边缘、纹理、形状等。<br>&nbsp;&nbsp;&nbsp;&nbsp;微调由以下4步组成：<br>1、在源数据集上预训练一个神经网络模型，即源模型；<br>2、创建一个新的神经网络模型，即目标模型，它复制了源模型除了输出层外所有层的模型设计和参数；<br>3、为目标模型添加一个输出大小为目标数据集类别个数的输出层，并随机初始化该层模型参数；<br>4、在目标数据集上训练目标模型，这样将从头训练输出层，而其余层的参数都是基于源模型的微调参数得到的。<br>&nbsp;&nbsp;&nbsp;&nbsp;当目标数据集远小于源数据集时，微调有助于提升模型泛化能力。一般来说，微调参数会使用较小的学习率，而从头训练输出层需要较大的学习率。  </p>
+<h3 id="目标检测和边界框"><a href="#目标检测和边界框" class="headerlink" title="目标检测和边界框"></a>目标检测和边界框</h3><p>&nbsp;&nbsp;&nbsp;&nbsp;在图像中获取到多个目标，同时获取其类别和具体位置，这类任务称为目标检测。  </p>
+<h4 id="边界框"><a href="#边界框" class="headerlink" title="边界框"></a>边界框</h4><p>&nbsp;&nbsp;&nbsp;&nbsp;边界框是一个矩形框，通常用于目标检测的位置标定。  </p>
+<h4 id="锚框"><a href="#锚框" class="headerlink" title="锚框"></a>锚框</h4><p>&nbsp;&nbsp;&nbsp;&nbsp;目标检测算法会采样大量区域，然后判断区域中是否包含感兴趣的目标，并调整区域边缘从而更准确预测真实边界框。其中一种方式就是以每个像素为中心生成多个大小和宽高比（aspect ratio）不同的边界框，这些框就是锚框（anchor box）。 </p>
+<h5 id="交并比"><a href="#交并比" class="headerlink" title="交并比"></a>交并比</h5><p>&nbsp;&nbsp;&nbsp;&nbsp;若某个锚框刚刚好覆盖了图像的目标，那么如何量化是否刚刚好覆盖，可以衡量锚框与真实边界框的相似度，通过Jaccard系数来进行计算，这样得到的Jaccard系数就是交并比（intersection over union）。  </p>
+<h5 id="非极大值抑制"><a href="#非极大值抑制" class="headerlink" title="非极大值抑制"></a>非极大值抑制</h5><p>&nbsp;&nbsp;&nbsp;&nbsp;模型预测时，会生成许多锚框，当锚框数量较多时，同一个目标可能输出较多相似的预测边界框，可以移除相似的预测边界框，这种方法就是非极大值抑制（non-maximum suppression）。  </p>
+<h4 id="多尺度目标检测"><a href="#多尺度目标检测" class="headerlink" title="多尺度目标检测"></a>多尺度目标检测</h4><p>&nbsp;&nbsp;&nbsp;&nbsp;可以在多个尺度下生成不同数量和大小的锚框，从而在多个尺度下检测不同大小的目标；特征图的形状可以确定任意图像上均匀采样的锚框中心；使用输入图像在某个感受野区域内的信息来预测输入图像上与该区域相近的锚框的类别和偏移量。  </p>
+<h4 id="单发多框检测"><a href="#单发多框检测" class="headerlink" title="单发多框检测"></a>单发多框检测</h4><p>&nbsp;&nbsp;&nbsp;&nbsp;单发多框检测（SSD）是一个多尺度的目标检测模型，它基于基础网络块和各个多尺度特征块生成不同数量和不同大小的锚框，并通过预测锚框的类别和偏移量检测不同大小的目标；在训练过程中，根据类别和偏移量的预测和标注值来计算损失函数。  </p>
+<h3 id="区域卷积神经网络系列"><a href="#区域卷积神经网络系列" class="headerlink" title="区域卷积神经网络系列"></a>区域卷积神经网络系列</h3><p>&nbsp;&nbsp;&nbsp;&nbsp;区域卷积神经网络（R-CNN）是将深度模型用于目标检测的开创性工作之一。  </p>
+<h4 id="R-CNN"><a href="#R-CNN" class="headerlink" title="R-CNN"></a>R-CNN</h4><p>&nbsp;&nbsp;&nbsp;&nbsp;R-CNN首先对图像选取多个高质量的提议区域，并标注类别和边界框；然后用CNN对每个提议区域做计算，抽取特征；随后用每个提议区域的特征使用SVM来预测类别，使用LR预测真实边界框。  </p>
+<h4 id="Fast-R-CNN"><a href="#Fast-R-CNN" class="headerlink" title="Fast R-CNN"></a>Fast R-CNN</h4><p>&nbsp;&nbsp;&nbsp;&nbsp;R-CNN的平静在于对每个提议区域独立抽取特征，这些区域会重叠，导致重复计算，FastR-CNN只对整个图像做卷积神经网络的前向计算，使用选择性搜索生成n个提议区域。  </p>
+<h4 id="Faster-R-CNN"><a href="#Faster-R-CNN" class="headerlink" title="Faster R-CNN"></a>Faster R-CNN</h4><p>&nbsp;&nbsp;&nbsp;&nbsp;Fast R-CNN需要使用选择性搜索生成较多的提议区域，以获得较精确的目标检测结果；Faster R-CNN将选择性搜索替换成区域提议网络，减少提议区域的生成数量，并保证目标检测的精度。  </p>
+<h4 id="Mask-R-CNN"><a href="#Mask-R-CNN" class="headerlink" title="Mask R-CNN"></a>Mask R-CNN</h4><p>&nbsp;&nbsp;&nbsp;&nbsp;Mask R-CNN在Faster R-CNN的基础上引入全卷积网络，借助目标的像素级位置进一步提升目标检测的精度。  </p>
+<h3 id="语义分割"><a href="#语义分割" class="headerlink" title="语义分割"></a>语义分割</h3><p>&nbsp;&nbsp;&nbsp;&nbsp;语义分割关注如何将图像划分成不同语义类别的区域，由于语义分割的输入图像和标签在像素上一一对应，所以需要将图像随机裁剪成固定尺寸，而不是缩放。  </p>
+<h4 id="全卷积网络"><a href="#全卷积网络" class="headerlink" title="全卷积网络"></a>全卷积网络</h4><p>&nbsp;&nbsp;&nbsp;&nbsp; 全卷积网络（FCN）采用CNN实现了从图像像素到像素类别的转换。它先使用卷积神经网络抽取图像特征，然后通过$1\times 1$卷积层将通道数变换为类别个数，最后通过转置卷积层将特征图的高和宽变换为输入图像的尺寸，从而输出每个像素的类别。  </p>
+<h3 id="样式迁移"><a href="#样式迁移" class="headerlink" title="样式迁移"></a>样式迁移</h3><p>&nbsp;&nbsp;&nbsp;&nbsp;使用卷积神经网络自动将某图像的样式应用在另一幅图像上面，就是样式迁移（style transfer），这里需要两张图象，一张是内容图像，一张是样式图像。<br>&nbsp;&nbsp;&nbsp;&nbsp;样式迁移常用的损失函数由三部分组成：  （1）内容损失，使合成图像与内容图像在内容特征上接近；<br>（2）样式损失，使合成图像与样式图像在样式特征上接近，使用格拉姆矩阵表达样式层输出的样式；<br>（3）总变差损失，有助于减少合成图像的噪点。  </p>
+
       
     </div>
 
@@ -637,7 +664,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#提高模型泛化的方法"><span class="nav-number">1.</span> <span class="nav-text">提高模型泛化的方法</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#图像增广"><span class="nav-number">1.1.</span> <span class="nav-text">图像增广</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#微调-FineTune"><span class="nav-number">1.2.</span> <span class="nav-text">微调(FineTune)</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#目标检测和边界框"><span class="nav-number">2.</span> <span class="nav-text">目标检测和边界框</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#锚框"><span class="nav-number">3.</span> <span class="nav-text">锚框</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#多尺度目标检测"><span class="nav-number">4.</span> <span class="nav-text">多尺度目标检测</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#单发多框检测"><span class="nav-number">5.</span> <span class="nav-text">单发多框检测</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#区域卷积神经网络系列"><span class="nav-number">6.</span> <span class="nav-text">区域卷积神经网络系列</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#语义分割"><span class="nav-number">7.</span> <span class="nav-text">语义分割</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#全卷积网络"><span class="nav-number">8.</span> <span class="nav-text">全卷积网络</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#样式迁移"><span class="nav-number">9.</span> <span class="nav-text">样式迁移</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#提高模型泛化的方法"><span class="nav-number">1.</span> <span class="nav-text">提高模型泛化的方法</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#图像增广"><span class="nav-number">1.1.</span> <span class="nav-text">图像增广</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#微调-FineTune"><span class="nav-number">1.2.</span> <span class="nav-text">微调(FineTune)</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#目标检测和边界框"><span class="nav-number">2.</span> <span class="nav-text">目标检测和边界框</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#边界框"><span class="nav-number">2.1.</span> <span class="nav-text">边界框</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#锚框"><span class="nav-number">2.2.</span> <span class="nav-text">锚框</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#交并比"><span class="nav-number">2.2.1.</span> <span class="nav-text">交并比</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#非极大值抑制"><span class="nav-number">2.2.2.</span> <span class="nav-text">非极大值抑制</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#多尺度目标检测"><span class="nav-number">2.3.</span> <span class="nav-text">多尺度目标检测</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#单发多框检测"><span class="nav-number">2.4.</span> <span class="nav-text">单发多框检测</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#区域卷积神经网络系列"><span class="nav-number">3.</span> <span class="nav-text">区域卷积神经网络系列</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#R-CNN"><span class="nav-number">3.1.</span> <span class="nav-text">R-CNN</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Fast-R-CNN"><span class="nav-number">3.2.</span> <span class="nav-text">Fast R-CNN</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Faster-R-CNN"><span class="nav-number">3.3.</span> <span class="nav-text">Faster R-CNN</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Mask-R-CNN"><span class="nav-number">3.4.</span> <span class="nav-text">Mask R-CNN</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#语义分割"><span class="nav-number">4.</span> <span class="nav-text">语义分割</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#全卷积网络"><span class="nav-number">4.1.</span> <span class="nav-text">全卷积网络</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#样式迁移"><span class="nav-number">5.</span> <span class="nav-text">样式迁移</span></a></li></ol></div>
             
 
           </div>
